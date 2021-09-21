@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<ProjectWorkspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="project_mpw.xsd">
+
+  <SchemaVersion>1.0</SchemaVersion>
+
+  <Header>### uVision Project, (C) Keil Software</Header>
+
+  <WorkspaceName>WorkSpace</WorkspaceName>
+
+  <project>
+    <PathAndName>.\P_Cooperative\Cooperative.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\P_RoundRobin\RoundRobin.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\P_Preemtive\Preemptive.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\P_Button\Button.uvprojx</PathAndName>
+    <NodeIsExpanded>1</NodeIsExpanded>
+  </project>
+
+  <project>
+    <PathAndName>.\P_UART\UART.uvprojx</PathAndName>
+    <NodeIsActive>1</NodeIsActive>
+    <NodeIsExpanded>1</NodeIsExpanded>
+  </project>
+
+  <project>
+    <PathAndName>.\P_Sync\Sync.uvprojx</PathAndName>
+  </project>
+
+</ProjectWorkspace>

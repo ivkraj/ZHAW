@@ -1,0 +1,8 @@
+--c99 -c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork --split_sections
+-I.\RTE\_Target_1
+-IC:\Users\Lars\AppData\Local\Arm\Packs\InES\CTBoard14_DFP\4.0.2\Device\Include
+-IC:\Users\Lars\AppData\Local\Arm\Packs\InES\CTBoard14_DFP\4.0.2\Device\Include\m0
+-IC:\Users\Lars\AppData\Local\Arm\Packs\InES\CTBoard14_DFP\4.0.2\HAL\Include
+-IE:\Programme\Keil\ARM\CMSIS\Include
+-D__UVISION_VERSION="533" -D_RTE_ -D_RTE_
+-o .\build\keypad.o --omf_browse .\build\keypad.crf --depend .\build\keypad.d "app\keypad.c"
