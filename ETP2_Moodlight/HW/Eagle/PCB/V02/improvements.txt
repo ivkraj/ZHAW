@@ -1,0 +1,9 @@
+Moodlight:
+- Connection Gecko/PE1 -> BT/GPIO2 added (CON_BT)
+- Corrected Layout of Supply-Connector -> Footprint was on bPlace instead of tPlace
+
+
+Extern Sensor:
+- Changed values of R1-R4 from 10k to 2k
+- Corrected footprint of OPT3001 --> (SCL & SDA were mixed up)
+- Corrected SDA & SCL-labels at X1

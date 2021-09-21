@@ -1,0 +1,74 @@
+\hypertarget{main_8c}{}\doxysection{C\+:/\+Users/lars\+\_\+/\+Dropbox/\+E\+T\+P1/\+S\+W/\+Gecko\+\_\+\+Simple/src/main.c File Reference}
+\label{main_8c}\index{C:/Users/lars\_/Dropbox/ETP1/SW/Gecko\_Simple/src/main.c@{C:/Users/lars\_/Dropbox/ETP1/SW/Gecko\_Simple/src/main.c}}
+
+
+main file for the Moodlight  
+
+
+{\ttfamily \#include \char`\"{}em\+\_\+chip.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+device.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+cmu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+emu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}segmentlcd.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pushbuttons.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}power\+L\+E\+Ds.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}touchslider.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}userinterface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}signalleds.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}adc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dac.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pwm.\+h\char`\"{}}\newline
+Include dependency graph for main.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em main function \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+main file for the Moodlight 
+
+\DoxyHorRuler
+
+
+Sets up uC, clocks, peripherals and user interface. Starts the power\+L\+E\+Ds, etc.
+
+Loops in the user interface
+
+\begin{DoxyAuthor}{Author}
+Lars Mueggler (\href{mailto:muegglar@students.zhaw.ch}{\texttt{ muegglar@students.\+zhaw.\+ch}}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+11.\+12.\+2019 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+main function 
+
+\DoxyHorRuler
+ Sets up uC, clocks, peripherals and user interface. Waits in low energy mode for an interrupt.
+
+\begin{DoxyReturn}{Returns}
+nothing, as it runs in an endless loop 
+\end{DoxyReturn}

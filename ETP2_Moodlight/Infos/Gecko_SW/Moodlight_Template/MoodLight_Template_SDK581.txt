@@ -1,0 +1,5 @@
+The MoodLight_Template_SDK581.zip archive contains a ready to use EFM32 Gecko project for ETP1. 
+It has been tested with the Gecko SDK Suite v2.6.2: Kernel, MCU 5.8.1.0
+
+03-SEP-2019 eand
+

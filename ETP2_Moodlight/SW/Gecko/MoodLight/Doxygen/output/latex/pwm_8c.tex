@@ -1,0 +1,225 @@
+\hypertarget{pwm_8c}{}\doxysection{C\+:/\+Users/lars\+\_\+/\+Dropbox/\+E\+T\+P1/\+S\+W/\+Gecko\+\_\+\+Simple/src/pwm.c File Reference}
+\label{pwm_8c}\index{C:/Users/lars\_/Dropbox/ETP1/SW/Gecko\_Simple/src/pwm.c@{C:/Users/lars\_/Dropbox/ETP1/SW/Gecko\_Simple/src/pwm.c}}
+
+
+P\+WM.  
+
+
+{\ttfamily \#include \char`\"{}em\+\_\+chip.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+device.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+gpio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+timer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+letimer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+cmu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}signal\+L\+E\+Ds.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pwm.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}adc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}power\+L\+E\+Ds.\+h\char`\"{}}\newline
+Include dependency graph for pwm.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pwm_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{pwm_8c_a2748566f4c443ee77aa831e63dbb5ebe}\label{pwm_8c_a2748566f4c443ee77aa831e63dbb5ebe}} 
+\#define \mbox{\hyperlink{pwm_8c_a2748566f4c443ee77aa831e63dbb5ebe}{P}}~1
+\begin{DoxyCompactList}\small\item\em P Value -\/-\/$>$ 2.\+2$\ast$0.45 = 0.\+99 (Ziegler-\/\+Nichols) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{pwm_8c_a60ef6e1bcfabb95cfeb300e1d03ce470}\label{pwm_8c_a60ef6e1bcfabb95cfeb300e1d03ce470}} 
+\#define \mbox{\hyperlink{pwm_8c_a60ef6e1bcfabb95cfeb300e1d03ce470}{I}}~300
+\begin{DoxyCompactList}\small\item\em I Value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{pwm_8c_a257b3a17a761f82755146a8569c93776}{P\+I\+\_\+controller\+\_\+adjust\+\_\+current}} ()
+\begin{DoxyCompactList}\small\item\em PI controller for adjusting the output current ~\newline
+ static variable are used because the controller needs the previous values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pwm_8c_a12c8b827e5eab9d3f93d56f858e735a3}{T\+I\+M\+E\+R2\+\_\+\+I\+R\+Q\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em T\+I\+M\+E\+R2 interrupt handler. This interrupt is for the {\bfseries{PI controller}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pwm_8c_ae8661a92fff1dd0ea998bab1fb52c72e}{G\+P\+I\+O\+\_\+clear}} (uint32\+\_\+t port, uint32\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Clear a G\+P\+IO. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pwm_8c_a9816c7c730e93dba6a3e231505a40354}{P\+W\+M\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize T\+I\+M\+E\+R0, T\+I\+M\+E\+R2, L\+E\+T\+I\+M\+E\+R0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pwm_8c_aea894c31e6f923b793ad25fb22dc022b}{P\+W\+M\+\_\+\+L\+E\+T\+I\+M\+E\+R0\+\_\+change}} (uint32\+\_\+t value\+\_\+compare)
+\begin{DoxyCompactList}\small\item\em Change duty cycle of L\+E\+T\+I\+M\+E\+R0 in P\+WM mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pwm_8c_aced4e013dc7dd7ca2eed6176a24d3c30}{P\+W\+M\+\_\+\+L\+E\+T\+I\+M\+E\+R0\+\_\+start}} ()
+\begin{DoxyCompactList}\small\item\em Start L\+E\+T\+I\+M\+E\+R0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pwm_8c_ac5957a7a2abb2a06cd1e75b0c7df6918}{P\+W\+M\+\_\+\+L\+E\+T\+I\+M\+E\+R0\+\_\+stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop L\+E\+T\+I\+M\+E\+R0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pwm_8c_aa9dc7ae972928f48363b8cc9e3bd9688}{P\+W\+M\+\_\+\+T\+I\+M\+E\+R0\+\_\+change}} (uint32\+\_\+t compare)
+\begin{DoxyCompactList}\small\item\em Change the dutycycle of P\+WM (T\+I\+M\+E\+R0) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pwm_8c_acda506d622f00f542b1edb66262270d4}{P\+W\+M\+\_\+\+T\+I\+M\+E\+R02\+\_\+start}} ()
+\begin{DoxyCompactList}\small\item\em Start T\+I\+M\+E\+R0 and T\+I\+M\+E\+R2 which are needed for solution 2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pwm_8c_a8f0cf99758967f6001573b645765652c}{P\+W\+M\+\_\+\+T\+I\+M\+E\+R02\+\_\+stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop T\+I\+M\+E\+R0 and T\+I\+M\+E\+R2 which are needed for solution 2. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+P\+WM. 
+
+\DoxyHorRuler
+
+
+Initializing the timers and output pins, functions to change the duty cycles and start/stop the P\+WM signals
+
+Prefix\+: P\+WM
+
+Board\+: Starter Kit E\+F\+M32-\/\+G8\+X\+X-\/\+S\+TK Device\+: E\+F\+M32\+G890\+F128 (Gecko)
+
+\begin{DoxyAuthor}{Authors}
+Lars Mueggler (\href{mailto:muegglar@students.zhaw.ch}{\texttt{ muegglar@students.\+zhaw.\+ch}}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+27.\+12.\+2019 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pwm_8c_ae8661a92fff1dd0ea998bab1fb52c72e}\label{pwm_8c_ae8661a92fff1dd0ea998bab1fb52c72e}} 
+\index{pwm.c@{pwm.c}!GPIO\_clear@{GPIO\_clear}}
+\index{GPIO\_clear@{GPIO\_clear}!pwm.c@{pwm.c}}
+\doxysubsubsection{\texorpdfstring{GPIO\_clear()}{GPIO\_clear()}}
+{\footnotesize\ttfamily void G\+P\+I\+O\+\_\+clear (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{port,  }\item[{uint32\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Clear a G\+P\+IO. 
+
+\DoxyHorRuler
+ 
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}port\mbox{]}} & port of G\+P\+IO \\
+\hline
+{\em \mbox{[}pin\mbox{]}} & pin of G\+P\+IO \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pwm_8c_a257b3a17a761f82755146a8569c93776}\label{pwm_8c_a257b3a17a761f82755146a8569c93776}} 
+\index{pwm.c@{pwm.c}!PI\_controller\_adjust\_current@{PI\_controller\_adjust\_current}}
+\index{PI\_controller\_adjust\_current@{PI\_controller\_adjust\_current}!pwm.c@{pwm.c}}
+\doxysubsubsection{\texorpdfstring{PI\_controller\_adjust\_current()}{PI\_controller\_adjust\_current()}}
+{\footnotesize\ttfamily void P\+I\+\_\+controller\+\_\+adjust\+\_\+current (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+PI controller for adjusting the output current ~\newline
+ static variable are used because the controller needs the previous values. 
+
+\DoxyHorRuler
+ \mbox{\Hypertarget{pwm_8c_a9816c7c730e93dba6a3e231505a40354}\label{pwm_8c_a9816c7c730e93dba6a3e231505a40354}} 
+\index{pwm.c@{pwm.c}!PWM\_init@{PWM\_init}}
+\index{PWM\_init@{PWM\_init}!pwm.c@{pwm.c}}
+\doxysubsubsection{\texorpdfstring{PWM\_init()}{PWM\_init()}}
+{\footnotesize\ttfamily void P\+W\+M\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize T\+I\+M\+E\+R0, T\+I\+M\+E\+R2, L\+E\+T\+I\+M\+E\+R0. 
+
+\DoxyHorRuler
+ All the peripherals are initialized.
+
+\begin{DoxyNote}{Note}
+T\+I\+M\+E\+R0 is used to generate P\+WM signal with a frequency of 50k\+Hz for solution 2. 
+
+T\+I\+M\+E\+R2 is used to generate interrupts for PI controller with a frequency of 10k\+Hz for solution 2. 
+
+L\+E\+T\+I\+M\+E\+R0 is used to generate P\+WM signal with a frequency of 400Hz for solution 0 
+\end{DoxyNote}
+\mbox{\Hypertarget{pwm_8c_aea894c31e6f923b793ad25fb22dc022b}\label{pwm_8c_aea894c31e6f923b793ad25fb22dc022b}} 
+\index{pwm.c@{pwm.c}!PWM\_LETIMER0\_change@{PWM\_LETIMER0\_change}}
+\index{PWM\_LETIMER0\_change@{PWM\_LETIMER0\_change}!pwm.c@{pwm.c}}
+\doxysubsubsection{\texorpdfstring{PWM\_LETIMER0\_change()}{PWM\_LETIMER0\_change()}}
+{\footnotesize\ttfamily void P\+W\+M\+\_\+\+L\+E\+T\+I\+M\+E\+R0\+\_\+change (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value\+\_\+compare }\end{DoxyParamCaption})}
+
+
+
+Change duty cycle of L\+E\+T\+I\+M\+E\+R0 in P\+WM mode. 
+
+\DoxyHorRuler
+ 
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}value\+\_\+compare\mbox{]}} & value\+\_\+compare new P\+WM active time \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pwm_8c_aced4e013dc7dd7ca2eed6176a24d3c30}\label{pwm_8c_aced4e013dc7dd7ca2eed6176a24d3c30}} 
+\index{pwm.c@{pwm.c}!PWM\_LETIMER0\_start@{PWM\_LETIMER0\_start}}
+\index{PWM\_LETIMER0\_start@{PWM\_LETIMER0\_start}!pwm.c@{pwm.c}}
+\doxysubsubsection{\texorpdfstring{PWM\_LETIMER0\_start()}{PWM\_LETIMER0\_start()}}
+{\footnotesize\ttfamily void P\+W\+M\+\_\+\+L\+E\+T\+I\+M\+E\+R0\+\_\+start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start L\+E\+T\+I\+M\+E\+R0. 
+
+\DoxyHorRuler
+ \mbox{\Hypertarget{pwm_8c_ac5957a7a2abb2a06cd1e75b0c7df6918}\label{pwm_8c_ac5957a7a2abb2a06cd1e75b0c7df6918}} 
+\index{pwm.c@{pwm.c}!PWM\_LETIMER0\_stop@{PWM\_LETIMER0\_stop}}
+\index{PWM\_LETIMER0\_stop@{PWM\_LETIMER0\_stop}!pwm.c@{pwm.c}}
+\doxysubsubsection{\texorpdfstring{PWM\_LETIMER0\_stop()}{PWM\_LETIMER0\_stop()}}
+{\footnotesize\ttfamily void P\+W\+M\+\_\+\+L\+E\+T\+I\+M\+E\+R0\+\_\+stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stop L\+E\+T\+I\+M\+E\+R0. 
+
+\DoxyHorRuler
+ \mbox{\Hypertarget{pwm_8c_acda506d622f00f542b1edb66262270d4}\label{pwm_8c_acda506d622f00f542b1edb66262270d4}} 
+\index{pwm.c@{pwm.c}!PWM\_TIMER02\_start@{PWM\_TIMER02\_start}}
+\index{PWM\_TIMER02\_start@{PWM\_TIMER02\_start}!pwm.c@{pwm.c}}
+\doxysubsubsection{\texorpdfstring{PWM\_TIMER02\_start()}{PWM\_TIMER02\_start()}}
+{\footnotesize\ttfamily void P\+W\+M\+\_\+\+T\+I\+M\+E\+R02\+\_\+start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start T\+I\+M\+E\+R0 and T\+I\+M\+E\+R2 which are needed for solution 2. 
+
+\DoxyHorRuler
+ \mbox{\Hypertarget{pwm_8c_a8f0cf99758967f6001573b645765652c}\label{pwm_8c_a8f0cf99758967f6001573b645765652c}} 
+\index{pwm.c@{pwm.c}!PWM\_TIMER02\_stop@{PWM\_TIMER02\_stop}}
+\index{PWM\_TIMER02\_stop@{PWM\_TIMER02\_stop}!pwm.c@{pwm.c}}
+\doxysubsubsection{\texorpdfstring{PWM\_TIMER02\_stop()}{PWM\_TIMER02\_stop()}}
+{\footnotesize\ttfamily void P\+W\+M\+\_\+\+T\+I\+M\+E\+R02\+\_\+stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stop T\+I\+M\+E\+R0 and T\+I\+M\+E\+R2 which are needed for solution 2. 
+
+\DoxyHorRuler
+ \mbox{\Hypertarget{pwm_8c_aa9dc7ae972928f48363b8cc9e3bd9688}\label{pwm_8c_aa9dc7ae972928f48363b8cc9e3bd9688}} 
+\index{pwm.c@{pwm.c}!PWM\_TIMER0\_change@{PWM\_TIMER0\_change}}
+\index{PWM\_TIMER0\_change@{PWM\_TIMER0\_change}!pwm.c@{pwm.c}}
+\doxysubsubsection{\texorpdfstring{PWM\_TIMER0\_change()}{PWM\_TIMER0\_change()}}
+{\footnotesize\ttfamily void P\+W\+M\+\_\+\+T\+I\+M\+E\+R0\+\_\+change (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{compare }\end{DoxyParamCaption})}
+
+
+
+Change the dutycycle of P\+WM (T\+I\+M\+E\+R0) 
+
+\DoxyHorRuler
+ 
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}compare\mbox{]}} & on time of P\+WM \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pwm_8c_a12c8b827e5eab9d3f93d56f858e735a3}\label{pwm_8c_a12c8b827e5eab9d3f93d56f858e735a3}} 
+\index{pwm.c@{pwm.c}!TIMER2\_IRQHandler@{TIMER2\_IRQHandler}}
+\index{TIMER2\_IRQHandler@{TIMER2\_IRQHandler}!pwm.c@{pwm.c}}
+\doxysubsubsection{\texorpdfstring{TIMER2\_IRQHandler()}{TIMER2\_IRQHandler()}}
+{\footnotesize\ttfamily void T\+I\+M\+E\+R2\+\_\+\+I\+R\+Q\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+T\+I\+M\+E\+R2 interrupt handler. This interrupt is for the {\bfseries{PI controller}}. 
+
+\DoxyHorRuler
+ The PI controller contains A\+D\+C0 measurements, the control path and adjusting the P\+WM active times. \begin{DoxyNote}{Note}
+This interrupt handler is time critical. Because of A\+D\+C0 not faster than 25k\+Hz! 
+\end{DoxyNote}

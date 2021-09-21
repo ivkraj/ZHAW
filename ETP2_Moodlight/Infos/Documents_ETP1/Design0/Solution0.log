@@ -1,0 +1,256 @@
+
+   --- Expanded Deck Component Count ---
+B's 1
+C's 9
+D's 10
+E's 3
+F's 1
+G's 2
+I's 1
+L's 1
+R's 25
+S's 7
+V's 7
+tot: 67
+
+
+    --- Expanded Netlist ---
+* C:\Users\lars_\Documents\Studium_offline\Faecher\Semester_3\ETP1\Documents_ETP1\Design0\Solution0.asc
+v1 24vdc 0 24
+r1 n001 led+ 0.3
+c1 n001 0 10µ
+c2 led- led+ 10µ
+l1 n002 led- 680µ
+d1 n002 n001 ss13l
+d2 led+ n003 lxhl-bw02
+d3 n003 n004 lxhl-bw02
+d4 n004 p001 lxhl-bw02
+d5 p001 p002 lxhl-bw02
+e:u1:2 u1:19 0 n001 0 1
+b:u1:111 u1:14 0 v=min(v(u1:19), 1.25)
+r:u1:3 u1:14 u1:19 20k
+r:u1:4 u1:14 a 200k
+c:u1:1 u1:15 0 5p ic=0
+c:u1:2 u1:16 0 5p ic=0
+c:u1:3 u1:17 0 5p ic=0
+r:u1:5 a u1:15 7.7meg
+r:u1:6 u1:15 u1:16 7.7meg
+r:u1:7 u1:16 u1:17 7.7meg
+e:u1:7 u1:12 0 u1:17 0 1
+r:u1:8 u1:12 u1:adj_lockout 1000
+i:u1:1 u1:12 u1:adj_lockout dc 50ua
+c:u1:7 u1:adj_lockout u1:12 1p ic=0
+s:u1:_s4:_s4 u1:adj_lockout u1:12 u1:adj_lockout 0 u1:_s4:s4 
+r:u1:_s4:s_s4 u1:adj_lockout 0 1g
+s:u1:_s5:_s5 u1:23 0 u1:adj_lockout 0 u1:_s5:s5 
+r:u1:_s5:s_s5 u1:adj_lockout 0 1g
+s:u1:_s6:_s6 u1:23 0 n001 0 u1:_s6:s6 
+r:u1:_s6:s_s6 n001 0 1g
+g:u1:2 0 u1:8 n001 led+ 1m
+c:u1:4 0 led+ 20p
+r:u1:9 0 u1:9 3.832k
+r:u1:10 u1:9 u1:8 10.859k
+s:u1:_s7:_s7 u1:9 0 u1:23 0 u1:_s7:s7 
+r:u1:_s7:s_s7 u1:23 0 1g
+g:u1:3 u1:21 0 u1:8 u1:12 1000m
+r:u1:11 0 u1:21 1meg
+v:u1:3 u1:24 0 700mv
+d:u1:8 u1:24 u1:21 u1:dclamp 
+v:u1:4 u1:22 0 6v
+d:u1:9 u1:21 u1:22 u1:dclamp 
+e:u1:4 u1:25 0 u1:21 0 1
+c:u1:6 0 u1:23 25p
+r:u1:13 u1:23 u1:25 2k
+s:u1:_s8:_s8 u1:11 0 u1:23 0 u1:_s8:s8 
+r:u1:_s8:s_s8 u1:23 0 1g
+r:u1:12 u1:11 n002 0.4
+c:u1:5 0 n002 100p
+s:u1:_s3:_s3 u1:4 u1:7 u1:adj_lockout 0 u1:_s3:s3 
+r:u1:_s3:s_s3 u1:adj_lockout 0 1g
+r:u1:1 0 u1:7 1.58k
+r:u1:2 0 u1:4 67k
+s:u1:_s2:_s2 u1:6 u1:4 n001 0 u1:_s2:s2 
+r:u1:_s2:s_s2 n001 0 1g
+v:u1:1 u1:5 0 1v
+f:u1:_f1:_f1 n001 0 v:u1:_f1:f_f1 1
+v:u1:_f1:f_f1 u1:6 u1:5 0v
+v:u1:99 u1:99 0 dc 0 ac 0 pulse 0 0 0 100n 100n 500n 1u
+r:u1:99 u1:99 0 100
+v2 pwm 0 pulse(0 2.5 0 0 0 2.5m 2.5m)
+r3 n005 0 1.3k
+r4 n005 pwm 2k
+d6 24vdc n001 d
+d7 p002 p003 lxhl-bw02
+d8 p003 led- lxhl-bw02
+r2 n005 a 4.7k
+.model ss13l d(is=1.4837e-6 n=1.0443 rs=54.747e-3 ikf=.44154 cjo=147.94e-12 m=.49997 vj=1.0845 isr=205.41e-9 nr=4.9950 bv=30 ibv=10e-6 tt=7.3989e-9 type=schottky)
+.model lxhl-bw02 d(is=4.5e-20 rs=.85 n=2.6 cjo=1.18n xti=200 iave=400ma vpk=5 mfg=lumileds type=led)
+.model d d
+.model u1:dclamp d is=2.682n n=1.836 rs=.5664 ikf=44.17m cjo=4p m=.3333 vj=.5
+.model u1:_s2:s2 vswitch roff=1e6 ron=1.0 voff=1.248v von=1.25v
+.model u1:_s3:s3 vswitch roff=1e6 ron=1.0 voff=198mv von=200mv
+.model u1:_s8:s8 vswitch roff=10e6 ron=1.0 voff=2750mv von=2755mv
+.model u1:_s7:s7 vswitch roff=10e6 ron=1.0 voff=2750mv von=2755mv
+.model u1:_s6:s6 vswitch roff=10e6 ron=1.0 voff=6.505v von=6.495v
+.model u1:_s5:s5 vswitch roff=10e6 ron=1.0 voff=251mv von=249mv
+.model u1:_s4:s4 vswitch roff=10e6 ron=1 voff=255mv von=245mv
+.tran 15m
+.end
+
+Limiting rise time of source v2 to 5.20417e-019
+Limiting fall time of source v2 to 5.20417e-019
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+vernier = 0.5
+Gmin = 2.07126
+vernier = 0.25
+vernier = 0.125
+vernier = 0.166667
+Gmin = 1.84124
+vernier = 0.222222
+Gmin = 1.1306
+vernier = 0.296296
+vernier = 0.395061
+Gmin = 0.505223
+vernier = 0.526748
+vernier = 0.702331
+Gmin = 0.144148
+vernier = 0.936441
+Gmin = 0.0213635
+vernier = 1
+Gmin = 0.00229389
+Gmin = 0.000246304
+Gmin = 2.64467e-005
+Gmin = 2.8397e-006
+Gmin = 3.0491e-007
+Gmin = 3.27395e-008
+Gmin = 3.51537e-009
+Gmin = 3.7746e-010
+Gmin = 4.05295e-011
+Gmin = 4.35182e-012
+Gmin = 4.67273e-013
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+Ignoring empty pin current: Ix(_s4:1)
+Ignoring empty pin current: Ix(_s4:2)
+Ignoring empty pin current: Ix(_s4:3)
+Ignoring empty pin current: Ix(_s4:4)
+Ignoring empty pin current: Ix(_s5:1)
+Ignoring empty pin current: Ix(_s5:2)
+Ignoring empty pin current: Ix(_s5:3)
+Ignoring empty pin current: Ix(_s5:4)
+Ignoring empty pin current: Ix(_s6:1)
+Ignoring empty pin current: Ix(_s6:2)
+Ignoring empty pin current: Ix(_s6:3)
+Ignoring empty pin current: Ix(_s6:4)
+Ignoring empty pin current: Ix(_s7:1)
+Ignoring empty pin current: Ix(_s7:2)
+Ignoring empty pin current: Ix(_s7:3)
+Ignoring empty pin current: Ix(_s7:4)
+Ignoring empty pin current: Ix(_s8:1)
+Ignoring empty pin current: Ix(_s8:2)
+Ignoring empty pin current: Ix(_s8:3)
+Ignoring empty pin current: Ix(_s8:4)
+Ignoring empty pin current: Ix(_s3:1)
+Ignoring empty pin current: Ix(_s3:2)
+Ignoring empty pin current: Ix(_s3:3)
+Ignoring empty pin current: Ix(_s3:4)
+Ignoring empty pin current: Ix(_s2:1)
+Ignoring empty pin current: Ix(_s2:2)
+Ignoring empty pin current: Ix(_s2:3)
+Ignoring empty pin current: Ix(_s2:4)
+Ignoring empty pin current: Ix(_f1:1)
+Ignoring empty pin current: Ix(_f1:2)
+Ignoring empty pin current: Ix(_f1:3)
+Ignoring empty pin current: Ix(_f1:4)
+Ignoring empty pin current: Ix(u1:18)
+Ignoring empty pin current: Ix(_s4:1)
+Ignoring empty pin current: Ix(_s4:2)
+Ignoring empty pin current: Ix(_s4:3)
+Ignoring empty pin current: Ix(_s4:4)
+Ignoring empty pin current: Ix(_s5:1)
+Ignoring empty pin current: Ix(_s5:2)
+Ignoring empty pin current: Ix(_s5:3)
+Ignoring empty pin current: Ix(_s5:4)
+Ignoring empty pin current: Ix(_s6:1)
+Ignoring empty pin current: Ix(_s6:2)
+Ignoring empty pin current: Ix(_s6:3)
+Ignoring empty pin current: Ix(_s6:4)
+Ignoring empty pin current: Ix(_s7:1)
+Ignoring empty pin current: Ix(_s7:2)
+Ignoring empty pin current: Ix(_s7:3)
+Ignoring empty pin current: Ix(_s7:4)
+Ignoring empty pin current: Ix(_s8:1)
+Ignoring empty pin current: Ix(_s8:2)
+Ignoring empty pin current: Ix(_s8:3)
+Ignoring empty pin current: Ix(_s8:4)
+Ignoring empty pin current: Ix(_s3:1)
+Ignoring empty pin current: Ix(_s3:2)
+Ignoring empty pin current: Ix(_s3:3)
+Ignoring empty pin current: Ix(_s3:4)
+Ignoring empty pin current: Ix(_s2:1)
+Ignoring empty pin current: Ix(_s2:2)
+Ignoring empty pin current: Ix(_s2:3)
+Ignoring empty pin current: Ix(_s2:4)
+Ignoring empty pin current: Ix(_f1:1)
+Ignoring empty pin current: Ix(_f1:2)
+Ignoring empty pin current: Ix(_f1:3)
+Ignoring empty pin current: Ix(_f1:4)
+Ignoring empty pin current: Ix(u1:18)
+Heightened Def Con from 0.000129313 to 0.000129314
+Heightened Def Con from 0.000135179 +to 0.000135182
+Heightened Def Con from 0.000194146 +to 0.000194146
+Heightened Def Con from 0.000456446 to 0.000456446
+Heightened Def Con from 0.000474979 to 0.000474979
+Heightened Def Con from 0.000730477 to 0.000730477
+Heightened Def Con from 0.000811458 to 0.000811458
+Heightened Def Con from 0.000860541 to 0.000860541
+Heightened Def Con from 0.000860541 to 0.000860541
+Heightened Def Con from 0.00196261 to 0.00196261
+Heightened Def Con from 0.00288152 to 0.00288152
+Heightened Def Con from 0.00316931 to 0.00316931
+Heightened Def Con from 0.00353515 to 0.00353515
+Heightened Def Con from 0.00353515 to 0.00353515
+Heightened Def Con from 0.00376979 to 0.00376979
+Heightened Def Con from 0.00405758 +to 0.00405758
+Heightened Def Con from 0.00407147 to 0.00407147
+Heightened Def Con from 0.00420842 to 0.00420842
+Heightened Def Con from 0.00429222 to 0.00429222
+Heightened Def Con from 0.00440667 to 0.00440667
+Heightened Def Con from 0.00444019 to 0.00444019
+Heightened Def Con from 0.0046413 to 0.0046413
+Heightened Def Con from 0.00477826 +to 0.00477826
+Heightened Def Con from 0.0053117 to 0.0053117
+Heightened Def Con from 0.00579774 to 0.00579774
+Heightened Def Con from 0.00579774 to 0.00579774
+Heightened Def Con from 0.00632016 to 0.00632016
+Heightened Def Con from 0.007524 to 0.007524
+Heightened Def Con from 0.00762743 to 0.00762743
+Heightened Def Con from 0.00771123 to 0.00771123
+Heightened Def Con from 0.00781179 to 0.00781179
+Heightened Def Con from 0.00801291 to 0.00801291
+Heightened Def Con from 0.00801291 to 0.00801291
+Heightened Def Con from 0.00806032 to 0.00806032
+Heightened Def Con from 0.00806032 to 0.00806032
+Heightened Def Con from 0.00857987 to 0.00857987
+Heightened Def Con from 0.0087849 to 0.0087849
+
+Date: Mon Oct 28 19:49:14 2019
+Total elapsed time: 15.602 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 1200661
+traniter = 1199776
+tranpoints = 471352
+accept = 362550
+rejected = 108843
+matrix size = 53
+fillins = 38
+solver = Normal
+Matrix Compiler1: 3.70 KB object code size  1.3/1.6/[0.5]
+Matrix Compiler2: 4.29 KB object code size  0.6/0.8/[0.5]
+

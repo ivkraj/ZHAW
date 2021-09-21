@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="resolution_names">
+        <item>500 Lux</item>
+        <item>1000 Lux</item>
+        <item>1500 Lux</item>
+        <item>2000 Lux</item>
+        <item>2500 Lux</item>
+        <item>3000 Lux</item>
+        <item>3500 Lux</item>
+        <item>4000 Lux</item>
+        <item>4500 Lux</item>
+        <item>5000 Lux</item>
+    </string-array>
+    <string-array name="resolution_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string-array name="visual_names">
+        <item>Temperature</item>
+        <item>Transmission</item>
+    </string-array>
+</resources>

@@ -1,0 +1,44 @@
+
+   --- Expanded Deck Component Count ---
+C's 3
+G's 1
+R's 4
+V's 1
+tot: 9
+
+
+    --- Expanded Netlist ---
+* C:\Users\lars_\Dropbox\ETP1\HW\LTSpice\simulation_testplan\Draft1.asc
+c1 n001 n004 100p
+c2 n003 0 10n
+r1 n003 n002 19.9k
+r2 n001 n003 79.6k
+r3 n004 n003 153.5k
+v1 n002 0 pulse(-1 1 0 250u 250u 0 500u 1000)
+g:u1:1 0 n001 0 n004 100000 
+r:u1:3 n001 0 1.
+c:u1:3 n001 0 0.00159154943091895 
+.ac dec 1000 0.1 100k
+.end
+
+No AC stimulus found:
+     Set the value of a current or voltage source to "AC 1."
+     to make it behave as a signal generator for AC analysis.
+Ignoring empty pin current: Ix(u1:1)
+Ignoring empty pin current: Ix(u1:2)
+
+Date: Mon Nov 18 15:03:47 2019
+Total elapsed time: 0.131 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 0
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 5
+fillins = 2
+solver = Normal
+

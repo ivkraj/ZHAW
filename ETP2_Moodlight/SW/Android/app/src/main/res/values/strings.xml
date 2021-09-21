@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Moodlight</string>
+    <string name="devices">Bluetooth Devices</string>
+    <string name="BLUETOOTH_NAME">RNBT</string>
+    <string name="text_Phone">Battery: </string>
+    <string name="text_Device">Moodlight: </string>
+    <string name="text_Luminosity">Luminosity</string>
+    <string name="text_Inverted">Inverted</string>
+    <string name="celsius">°C</string>
+    <string name="RED">Red: </string>
+    <string name="GREEN">Green: </string>
+    <string name="BLUE">Blue: </string>
+    <string name="WHITE">White: </string>
+
+    <string name="send_text">Text which should be sent</string>
+    <string name="send_button">Button to send text</string>
+
+    <string name="load_Dialog">Connect and set Initial Data</string>
+    <string name="Exception_Color">Can not convert RGB to RGBW. Error:</string>
+    <string name="Temp_on">Display Temperature</string>
+    <string name="Temp_off">Hide Temperature</string>
+    <string name="LED_off">000</string>
+    <string name="OvertemperatureToast">Because of over temperature protection, nothing can be sent!</string>
+    <string name="OvertemperatureTitle">over temp protection</string>
+    <string name="OvertemperatureMessage">Because of the over temperature, the LEDs are switched off!</string>
+
+    <string name="MODE">M</string>
+    <string name="ILLUMINATION">L</string>
+    <string name="TEMPLIMIT">T</string>
+    <string name="ON">0001</string>
+    <string name="OFF">0000</string>
+    <string name="MODE_RGB">0000000000000</string>
+    <string name="MODE_TEMPERATURE">0000000000001</string>
+    <string name="MODE_RGBFADE">0000000000002</string>
+    <string name="MODE_RGBWSTROBO">0000000000003</string>
+
+    <string name="UnderLimitTemp">Under Limit:</string>
+    <string name="UpperLimitTemp">Upper Limit:</string>
+    <string name="Temperature1">Under Limit is higher than Higher Limit. Limits getting switched!</string>
+    <string name="Temperature2">Under Limit is the same as Higher Limit. Limits not changed!</string>
+
+
+</resources>

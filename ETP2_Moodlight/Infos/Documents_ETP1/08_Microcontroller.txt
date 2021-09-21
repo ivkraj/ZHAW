@@ -1,0 +1,4 @@
+Datasheets, reference manual, etc. are in the folder ../EFM32G_Starter_Kit_Gxxx
+
+The code template and how to import can be found in the folder ../Gecko_SW
+

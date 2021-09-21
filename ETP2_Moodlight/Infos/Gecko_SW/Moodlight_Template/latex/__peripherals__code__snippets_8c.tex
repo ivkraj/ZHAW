@@ -1,0 +1,310 @@
+\hypertarget{__peripherals__code__snippets_8c}{}\doxysection{\+\_\+peripherals\+\_\+code\+\_\+snippets.\+c File Reference}
+\label{__peripherals__code__snippets_8c}\index{\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}}
+
+
+Code snippets which show how some peripherals of the Gecko microcontroller can be adressed.  
+
+
+{\ttfamily \#include \char`\"{}em\+\_\+cmu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+gpio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+adc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+dac.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+acmp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+timer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+letimer.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{__peripherals__code__snippets_8c_a7cc219a6e514920cf4dc29bf91d913f2}{G\+P\+I\+O\+\_\+init}} (uint32\+\_\+t port, uint32\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Initialize a G\+P\+IO. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{__peripherals__code__snippets_8c_aeb5121a1d2a64ed37021ed74fedb6b68}{G\+P\+I\+O\+\_\+set\+\_\+clear\+\_\+toggle}} (uint32\+\_\+t port, uint32\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Set, clear and toggle a G\+P\+IO. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{__peripherals__code__snippets_8c_a84bc363a9cb98f290f405193f1587f9f}{L\+E\+T\+I\+M\+E\+R0\+\_\+\+P\+W\+M\+\_\+init}} (uint32\+\_\+t value\+\_\+top, uint32\+\_\+t value\+\_\+compare)
+\begin{DoxyCompactList}\small\item\em Initialize L\+E\+T\+I\+M\+E\+R0 in P\+WM mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{__peripherals__code__snippets_8c_a90a668c07861a32e48e1c9cc9c036d92}{L\+E\+T\+I\+M\+E\+R0\+\_\+\+P\+W\+M\+\_\+change}} (uint32\+\_\+t value\+\_\+compare)
+\begin{DoxyCompactList}\small\item\em Change duty cycle of L\+E\+T\+I\+M\+E\+R0 in P\+WM mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{__peripherals__code__snippets_8c_ac76f362a1830e56bc3c99cac1acabb3d}{T\+I\+M\+E\+R0\+\_\+\+P\+W\+M\+\_\+init}} (uint32\+\_\+t value\+\_\+top, uint32\+\_\+t value\+\_\+compare)
+\begin{DoxyCompactList}\small\item\em Initialize T\+I\+M\+E\+R0 in P\+WM mode and activate overflow interrupt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{__peripherals__code__snippets_8c_a0d4d783fe6889b3ac1dab263bc80e550}{T\+I\+M\+E\+R0\+\_\+\+P\+W\+M\+\_\+change}} (uint32\+\_\+t value\+\_\+compare)
+\begin{DoxyCompactList}\small\item\em Change duty cycle of channel 0 of T\+I\+M\+E\+R0 in P\+WM mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{__peripherals__code__snippets_8c_a5f89e5f7418d3a10f49b2faeab3711dd}{T\+I\+M\+E\+R0\+\_\+\+I\+R\+Q\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em T\+I\+M\+E\+R0 interrupt handler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{__peripherals__code__snippets_8c_a2afeb0903a6c067c9e51a8e6372b15e2}{A\+D\+C0\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize A\+D\+C0 for one single conversion on channel 0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{__peripherals__code__snippets_8c_a937893a27507b2e4a3f506909090c0cb}{A\+D\+C0\+\_\+start\+\_\+one}} (void)
+\begin{DoxyCompactList}\small\item\em Start A\+D\+C0 for one single conversion. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{__peripherals__code__snippets_8c_af5a6435e056e19d7bef77b506cf2695a}{A\+D\+C0\+\_\+read\+\_\+one}} (void)
+\begin{DoxyCompactList}\small\item\em Read the converted value from A\+D\+C0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{__peripherals__code__snippets_8c_a396397a0f42d53d9f0942d118572017a}{D\+A\+C0\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize D\+A\+C0 channel 1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{__peripherals__code__snippets_8c_a7f65ad04726956fd768c6d18004a64a5}{D\+A\+C0\+\_\+write}} (uint32\+\_\+t value\+\_\+out)
+\begin{DoxyCompactList}\small\item\em Output new value to D\+A\+C0 channel 1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{__peripherals__code__snippets_8c_a782e09892d9ac0f93fca3715749fff10}{A\+C\+M\+P0\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize comparator A\+C\+M\+P0 and activate rising edge interrupt. ~\newline
+ Compare input on channel 5 with scaled portion of V\+DD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{__peripherals__code__snippets_8c_ae831c681e3df6f7a469a1b69b201894c}{A\+C\+M\+P0\+\_\+set\+\_\+level}} (uint32\+\_\+t value\+\_\+\+V\+D\+Dlevel)
+\begin{DoxyCompactList}\small\item\em Set new A\+C\+M\+P0 comparator level to scaled portion of V\+DD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{__peripherals__code__snippets_8c_a9c96b67da43e268f024e82dc608226d3}{A\+C\+M\+P0additional\+\_\+\+I\+R\+Q\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em Can be called from the A\+C\+MP interrupt handler A\+C\+M\+P0\+\_\+\+I\+R\+Q\+Handler(). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Code snippets which show how some peripherals of the Gecko microcontroller can be adressed. 
+
+\DoxyHorRuler
+
+
+\begin{DoxyWarning}{Warning}
+Do not include this file when building! ~\newline
+ It is meant to be used as a code quarry.
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+The peripherals can be set up for many different configurations. ~\newline
+ Details can be found in the {\bfseries{reference manual}} of the microcontroller. ~\newline
+ The {\bfseries{E\+M\+L\+IB}} and the {\bfseries{C\+M\+S\+IS}} documentation list predefined configurations.
+\end{DoxyNote}
+Board\+: Starter Kit E\+F\+M32-\/\+G8\+X\+X-\/\+S\+TK Device\+: E\+F\+M32\+G890\+F128 (Gecko)
+
+\begin{DoxyAuthor}{Author}
+Hanspeter Hochreutener (\href{mailto:hhrt@zhaw.ch}{\texttt{ hhrt@zhaw.\+ch}}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+15.\+7.\+2015 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{__peripherals__code__snippets_8c_a782e09892d9ac0f93fca3715749fff10}\label{__peripherals__code__snippets_8c_a782e09892d9ac0f93fca3715749fff10}} 
+\index{\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}!ACMP0\_init@{ACMP0\_init}}
+\index{ACMP0\_init@{ACMP0\_init}!\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}}
+\doxysubsubsection{\texorpdfstring{ACMP0\_init()}{ACMP0\_init()}}
+{\footnotesize\ttfamily void A\+C\+M\+P0\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize comparator A\+C\+M\+P0 and activate rising edge interrupt. ~\newline
+ Compare input on channel 5 with scaled portion of V\+DD. 
+
+\DoxyHorRuler
+ \mbox{\Hypertarget{__peripherals__code__snippets_8c_ae831c681e3df6f7a469a1b69b201894c}\label{__peripherals__code__snippets_8c_ae831c681e3df6f7a469a1b69b201894c}} 
+\index{\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}!ACMP0\_set\_level@{ACMP0\_set\_level}}
+\index{ACMP0\_set\_level@{ACMP0\_set\_level}!\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}}
+\doxysubsubsection{\texorpdfstring{ACMP0\_set\_level()}{ACMP0\_set\_level()}}
+{\footnotesize\ttfamily void A\+C\+M\+P0\+\_\+set\+\_\+level (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value\+\_\+\+V\+D\+Dlevel }\end{DoxyParamCaption})}
+
+
+
+Set new A\+C\+M\+P0 comparator level to scaled portion of V\+DD. 
+
+\DoxyHorRuler
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value\+\_\+\+V\+D\+Dlevel} & must be in the range = 0 .. 63 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{__peripherals__code__snippets_8c_a9c96b67da43e268f024e82dc608226d3}\label{__peripherals__code__snippets_8c_a9c96b67da43e268f024e82dc608226d3}} 
+\index{\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}!ACMP0additional\_IRQHandler@{ACMP0additional\_IRQHandler}}
+\index{ACMP0additional\_IRQHandler@{ACMP0additional\_IRQHandler}!\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}}
+\doxysubsubsection{\texorpdfstring{ACMP0additional\_IRQHandler()}{ACMP0additional\_IRQHandler()}}
+{\footnotesize\ttfamily void A\+C\+M\+P0additional\+\_\+\+I\+R\+Q\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Can be called from the A\+C\+MP interrupt handler A\+C\+M\+P0\+\_\+\+I\+R\+Q\+Handler(). 
+
+\begin{DoxyNote}{Note}
+Be aware of the fact that A\+C\+M\+P0 and A\+C\+M\+P1 share the same interrupt service routine A\+C\+M\+P0\+\_\+\+I\+R\+Q\+Handler().~\newline
+ This implies that there is no A\+C\+M\+P1\+\_\+\+I\+R\+Q\+Handler().~\newline
+ A\+C\+M\+P1 is used for the touchslider and handled by A\+C\+M\+P0\+\_\+\+I\+R\+Q\+Handler() directly. ~\newline
+ This A\+C\+M\+Padditional\+\_\+\+I\+R\+Q\+Handler() handles the A\+C\+M\+P0 interrupt when it is called by A\+C\+M\+P0\+\_\+\+I\+R\+Q\+Handler() in touchslider.\+c ~\newline
+ As part of an interrupt handler this is a time critical section. 
+\end{DoxyNote}
+\mbox{\Hypertarget{__peripherals__code__snippets_8c_a2afeb0903a6c067c9e51a8e6372b15e2}\label{__peripherals__code__snippets_8c_a2afeb0903a6c067c9e51a8e6372b15e2}} 
+\index{\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}!ADC0\_init@{ADC0\_init}}
+\index{ADC0\_init@{ADC0\_init}!\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}}
+\doxysubsubsection{\texorpdfstring{ADC0\_init()}{ADC0\_init()}}
+{\footnotesize\ttfamily void A\+D\+C0\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize A\+D\+C0 for one single conversion on channel 0. 
+
+\DoxyHorRuler
+ The A\+DC can also be configured to run continuously and issue an interrupt each time that a new reading is available. \mbox{\Hypertarget{__peripherals__code__snippets_8c_af5a6435e056e19d7bef77b506cf2695a}\label{__peripherals__code__snippets_8c_af5a6435e056e19d7bef77b506cf2695a}} 
+\index{\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}!ADC0\_read\_one@{ADC0\_read\_one}}
+\index{ADC0\_read\_one@{ADC0\_read\_one}!\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}}
+\doxysubsubsection{\texorpdfstring{ADC0\_read\_one()}{ADC0\_read\_one()}}
+{\footnotesize\ttfamily uint32\+\_\+t A\+D\+C0\+\_\+read\+\_\+one (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Read the converted value from A\+D\+C0. 
+
+\DoxyHorRuler
+ \begin{DoxyReturn}{Returns}
+A\+DC reading 
+\end{DoxyReturn}
+\mbox{\Hypertarget{__peripherals__code__snippets_8c_a937893a27507b2e4a3f506909090c0cb}\label{__peripherals__code__snippets_8c_a937893a27507b2e4a3f506909090c0cb}} 
+\index{\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}!ADC0\_start\_one@{ADC0\_start\_one}}
+\index{ADC0\_start\_one@{ADC0\_start\_one}!\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}}
+\doxysubsubsection{\texorpdfstring{ADC0\_start\_one()}{ADC0\_start\_one()}}
+{\footnotesize\ttfamily void A\+D\+C0\+\_\+start\+\_\+one (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Start A\+D\+C0 for one single conversion. 
+
+\DoxyHorRuler
+ \mbox{\Hypertarget{__peripherals__code__snippets_8c_a396397a0f42d53d9f0942d118572017a}\label{__peripherals__code__snippets_8c_a396397a0f42d53d9f0942d118572017a}} 
+\index{\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}!DAC0\_init@{DAC0\_init}}
+\index{DAC0\_init@{DAC0\_init}!\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}}
+\doxysubsubsection{\texorpdfstring{DAC0\_init()}{DAC0\_init()}}
+{\footnotesize\ttfamily void D\+A\+C0\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize D\+A\+C0 channel 1. 
+
+\DoxyHorRuler
+ \mbox{\Hypertarget{__peripherals__code__snippets_8c_a7f65ad04726956fd768c6d18004a64a5}\label{__peripherals__code__snippets_8c_a7f65ad04726956fd768c6d18004a64a5}} 
+\index{\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}!DAC0\_write@{DAC0\_write}}
+\index{DAC0\_write@{DAC0\_write}!\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}}
+\doxysubsubsection{\texorpdfstring{DAC0\_write()}{DAC0\_write()}}
+{\footnotesize\ttfamily void D\+A\+C0\+\_\+write (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value\+\_\+out }\end{DoxyParamCaption})}
+
+
+
+Output new value to D\+A\+C0 channel 1. 
+
+\DoxyHorRuler
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value\+\_\+out} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{__peripherals__code__snippets_8c_a7cc219a6e514920cf4dc29bf91d913f2}\label{__peripherals__code__snippets_8c_a7cc219a6e514920cf4dc29bf91d913f2}} 
+\index{\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}!GPIO\_init@{GPIO\_init}}
+\index{GPIO\_init@{GPIO\_init}!\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}}
+\doxysubsubsection{\texorpdfstring{GPIO\_init()}{GPIO\_init()}}
+{\footnotesize\ttfamily void G\+P\+I\+O\+\_\+init (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{port,  }\item[{uint32\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Initialize a G\+P\+IO. 
+
+\DoxyHorRuler
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em port} & of G\+P\+IO \\
+\hline
+\mbox{\texttt{ in}}  & {\em pin} & of G\+P\+IO \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+pushbuttons.\+c for G\+P\+IO interrupt example code 
+
+Documentation of the G\+P\+I\+O\+\_\+\+Mode\+\_\+\+Type\+Def in the file em\+\_\+gpio.\+h for other possible configurations. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{__peripherals__code__snippets_8c_aeb5121a1d2a64ed37021ed74fedb6b68}\label{__peripherals__code__snippets_8c_aeb5121a1d2a64ed37021ed74fedb6b68}} 
+\index{\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}!GPIO\_set\_clear\_toggle@{GPIO\_set\_clear\_toggle}}
+\index{GPIO\_set\_clear\_toggle@{GPIO\_set\_clear\_toggle}!\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}}
+\doxysubsubsection{\texorpdfstring{GPIO\_set\_clear\_toggle()}{GPIO\_set\_clear\_toggle()}}
+{\footnotesize\ttfamily void G\+P\+I\+O\+\_\+set\+\_\+clear\+\_\+toggle (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{port,  }\item[{uint32\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Set, clear and toggle a G\+P\+IO. 
+
+\DoxyHorRuler
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em port} & of G\+P\+IO \\
+\hline
+\mbox{\texttt{ in}}  & {\em pin} & of G\+P\+IO \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{__peripherals__code__snippets_8c_a90a668c07861a32e48e1c9cc9c036d92}\label{__peripherals__code__snippets_8c_a90a668c07861a32e48e1c9cc9c036d92}} 
+\index{\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}!LETIMER0\_PWM\_change@{LETIMER0\_PWM\_change}}
+\index{LETIMER0\_PWM\_change@{LETIMER0\_PWM\_change}!\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}}
+\doxysubsubsection{\texorpdfstring{LETIMER0\_PWM\_change()}{LETIMER0\_PWM\_change()}}
+{\footnotesize\ttfamily void L\+E\+T\+I\+M\+E\+R0\+\_\+\+P\+W\+M\+\_\+change (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value\+\_\+compare }\end{DoxyParamCaption})}
+
+
+
+Change duty cycle of L\+E\+T\+I\+M\+E\+R0 in P\+WM mode. 
+
+\DoxyHorRuler
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value\+\_\+compare} & new P\+WM active time \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{__peripherals__code__snippets_8c_a84bc363a9cb98f290f405193f1587f9f}\label{__peripherals__code__snippets_8c_a84bc363a9cb98f290f405193f1587f9f}} 
+\index{\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}!LETIMER0\_PWM\_init@{LETIMER0\_PWM\_init}}
+\index{LETIMER0\_PWM\_init@{LETIMER0\_PWM\_init}!\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}}
+\doxysubsubsection{\texorpdfstring{LETIMER0\_PWM\_init()}{LETIMER0\_PWM\_init()}}
+{\footnotesize\ttfamily void L\+E\+T\+I\+M\+E\+R0\+\_\+\+P\+W\+M\+\_\+init (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value\+\_\+top,  }\item[{uint32\+\_\+t}]{value\+\_\+compare }\end{DoxyParamCaption})}
+
+
+
+Initialize L\+E\+T\+I\+M\+E\+R0 in P\+WM mode. 
+
+\DoxyHorRuler
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value\+\_\+top} & = P\+WM period time \\
+\hline
+\mbox{\texttt{ in}}  & {\em value\+\_\+compare} & = P\+WM active time duty\+\_\+cycle = value\+\_\+compare / value\+\_\+top \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{__peripherals__code__snippets_8c_a5f89e5f7418d3a10f49b2faeab3711dd}\label{__peripherals__code__snippets_8c_a5f89e5f7418d3a10f49b2faeab3711dd}} 
+\index{\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}!TIMER0\_IRQHandler@{TIMER0\_IRQHandler}}
+\index{TIMER0\_IRQHandler@{TIMER0\_IRQHandler}!\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}}
+\doxysubsubsection{\texorpdfstring{TIMER0\_IRQHandler()}{TIMER0\_IRQHandler()}}
+{\footnotesize\ttfamily void T\+I\+M\+E\+R0\+\_\+\+I\+R\+Q\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+T\+I\+M\+E\+R0 interrupt handler. 
+
+\DoxyHorRuler
+ \begin{DoxyNote}{Note}
+This interrupt handler is time critical. ~\newline
+ Make sure that the C\+PU time used is shorter than the timer period. ~\newline
+ Prefer C\+M\+S\+IS commands over E\+M\+L\+IB functions, because they run faster. 
+\end{DoxyNote}
+\mbox{\Hypertarget{__peripherals__code__snippets_8c_a0d4d783fe6889b3ac1dab263bc80e550}\label{__peripherals__code__snippets_8c_a0d4d783fe6889b3ac1dab263bc80e550}} 
+\index{\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}!TIMER0\_PWM\_change@{TIMER0\_PWM\_change}}
+\index{TIMER0\_PWM\_change@{TIMER0\_PWM\_change}!\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}}
+\doxysubsubsection{\texorpdfstring{TIMER0\_PWM\_change()}{TIMER0\_PWM\_change()}}
+{\footnotesize\ttfamily void T\+I\+M\+E\+R0\+\_\+\+P\+W\+M\+\_\+change (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value\+\_\+compare }\end{DoxyParamCaption})}
+
+
+
+Change duty cycle of channel 0 of T\+I\+M\+E\+R0 in P\+WM mode. 
+
+\DoxyHorRuler
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value\+\_\+compare} & new P\+WM active time \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{__peripherals__code__snippets_8c_ac76f362a1830e56bc3c99cac1acabb3d}\label{__peripherals__code__snippets_8c_ac76f362a1830e56bc3c99cac1acabb3d}} 
+\index{\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}!TIMER0\_PWM\_init@{TIMER0\_PWM\_init}}
+\index{TIMER0\_PWM\_init@{TIMER0\_PWM\_init}!\_peripherals\_code\_snippets.c@{\_peripherals\_code\_snippets.c}}
+\doxysubsubsection{\texorpdfstring{TIMER0\_PWM\_init()}{TIMER0\_PWM\_init()}}
+{\footnotesize\ttfamily void T\+I\+M\+E\+R0\+\_\+\+P\+W\+M\+\_\+init (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value\+\_\+top,  }\item[{uint32\+\_\+t}]{value\+\_\+compare }\end{DoxyParamCaption})}
+
+
+
+Initialize T\+I\+M\+E\+R0 in P\+WM mode and activate overflow interrupt. 
+
+\DoxyHorRuler
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value\+\_\+top} & = P\+WM period time \\
+\hline
+\mbox{\texttt{ in}}  & {\em value\+\_\+compare} & = P\+WM active time of channel 0 duty\+\_\+cycle = value\+\_\+compare / value\+\_\+top ~\newline
+ 3 compare/capture channels are available on this timer. \\
+\hline
+\end{DoxyParams}

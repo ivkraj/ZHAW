@@ -1,0 +1,2 @@
+https://www.sparkfun.com/products/718 (kleiner Print, USB-Mini)
+http://www.avr-projekte.de/ft232rl.htm (einseitiger Print, USB-Stecker Typ B)

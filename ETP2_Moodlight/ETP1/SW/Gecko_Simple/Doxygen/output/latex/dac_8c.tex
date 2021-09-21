@@ -1,0 +1,117 @@
+\hypertarget{dac_8c}{}\doxysection{C\+:/\+Users/lars\+\_\+/\+Dropbox/\+E\+T\+P1/\+S\+W/\+Gecko\+\_\+\+Simple/src/dac.c File Reference}
+\label{dac_8c}\index{C:/Users/lars\_/Dropbox/ETP1/SW/Gecko\_Simple/src/dac.c@{C:/Users/lars\_/Dropbox/ETP1/SW/Gecko\_Simple/src/dac.c}}
+
+
+D\+AC.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+emu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+cmu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+device.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+chip.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+gpio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+dac.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+timer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}segmentlcd.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dac.\+h\char`\"{}}\newline
+Include dependency graph for dac.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dac_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{dac_8c_a396397a0f42d53d9f0942d118572017a}{D\+A\+C0\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize D\+A\+C0 channel 1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{dac_8c_a8828fdd0d9cf042a7adca4067064c93d}{D\+A\+C0\+\_\+write}} (uint32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Output new value to D\+A\+C0 channel 1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{dac_8c_adb34511f32b313972b3107b3d66e19e3}{D\+A\+C0\+\_\+start}} (uint32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Start D\+A\+C0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{dac_8c_a046a798f916dd586d79fe20cdad8a428}{D\+A\+C0\+\_\+stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop D\+A\+C0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+D\+AC. 
+
+\DoxyHorRuler
+
+
+All the functions needed for the D\+AC
+
+Prefix\+: D\+AC
+
+Board\+: Starter Kit E\+F\+M32-\/\+G8\+X\+X-\/\+S\+TK Device\+: E\+F\+M32\+G890\+F128 (Gecko)
+
+\begin{DoxyAuthor}{Author}
+Lars Mueggler (\href{mailto:muegglar@students.zhaw.ch}{\texttt{ muegglar@students.\+zhaw.\+ch}}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+17.\+10.\+2019 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{dac_8c_a396397a0f42d53d9f0942d118572017a}\label{dac_8c_a396397a0f42d53d9f0942d118572017a}} 
+\index{dac.c@{dac.c}!DAC0\_init@{DAC0\_init}}
+\index{DAC0\_init@{DAC0\_init}!dac.c@{dac.c}}
+\doxysubsubsection{\texorpdfstring{DAC0\_init()}{DAC0\_init()}}
+{\footnotesize\ttfamily void D\+A\+C0\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize D\+A\+C0 channel 1. 
+
+\DoxyHorRuler
+ \mbox{\Hypertarget{dac_8c_adb34511f32b313972b3107b3d66e19e3}\label{dac_8c_adb34511f32b313972b3107b3d66e19e3}} 
+\index{dac.c@{dac.c}!DAC0\_start@{DAC0\_start}}
+\index{DAC0\_start@{DAC0\_start}!dac.c@{dac.c}}
+\doxysubsubsection{\texorpdfstring{DAC0\_start()}{DAC0\_start()}}
+{\footnotesize\ttfamily void D\+A\+C0\+\_\+start (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Start D\+A\+C0. 
+
+\DoxyHorRuler
+ 
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}value\mbox{]}} & brightness of the led \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{dac_8c_a046a798f916dd586d79fe20cdad8a428}\label{dac_8c_a046a798f916dd586d79fe20cdad8a428}} 
+\index{dac.c@{dac.c}!DAC0\_stop@{DAC0\_stop}}
+\index{DAC0\_stop@{DAC0\_stop}!dac.c@{dac.c}}
+\doxysubsubsection{\texorpdfstring{DAC0\_stop()}{DAC0\_stop()}}
+{\footnotesize\ttfamily void D\+A\+C0\+\_\+stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stop D\+A\+C0. 
+
+\DoxyHorRuler
+ \mbox{\Hypertarget{dac_8c_a8828fdd0d9cf042a7adca4067064c93d}\label{dac_8c_a8828fdd0d9cf042a7adca4067064c93d}} 
+\index{dac.c@{dac.c}!DAC0\_write@{DAC0\_write}}
+\index{DAC0\_write@{DAC0\_write}!dac.c@{dac.c}}
+\doxysubsubsection{\texorpdfstring{DAC0\_write()}{DAC0\_write()}}
+{\footnotesize\ttfamily void D\+A\+C0\+\_\+write (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Output new value to D\+A\+C0 channel 1. 
+
+\DoxyHorRuler
+ 
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}value\mbox{]}} & new output value \\
+\hline
+\end{DoxyParams}

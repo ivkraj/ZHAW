@@ -1,0 +1,1 @@
+Tutorials, guidelines and libraries for the PCB layout with Eagle can be found in the folder ../Eagle_PCB

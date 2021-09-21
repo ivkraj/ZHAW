@@ -1,0 +1,4 @@
+These current measuring shunts are on stock
+0.30 ohm, 330 mW, ± 1%
+1.00 ohm, 330 mW, ± 1%
+Their SMD footprint is 1206

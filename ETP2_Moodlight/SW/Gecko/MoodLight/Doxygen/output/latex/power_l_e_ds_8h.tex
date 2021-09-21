@@ -1,0 +1,87 @@
+\hypertarget{power_l_e_ds_8h}{}\doxysection{C\+:/\+Users/lars\+\_\+/\+Dropbox/\+E\+T\+P1/\+S\+W/\+Gecko\+\_\+\+Simple/src/inc/power\+L\+E\+Ds.h File Reference}
+\label{power_l_e_ds_8h}\index{C:/Users/lars\_/Dropbox/ETP1/SW/Gecko\_Simple/src/inc/powerLEDs.h@{C:/Users/lars\_/Dropbox/ETP1/SW/Gecko\_Simple/src/inc/powerLEDs.h}}
+
+
+See \mbox{\hyperlink{power_l_e_ds_8c}{power\+L\+E\+Ds.\+c}}.  
+
+
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{power_l_e_ds_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{power_l_e_ds_8h_ac1d65b669819ef3d0879329fafcb8da9}\label{power_l_e_ds_8h_ac1d65b669819ef3d0879329fafcb8da9}} 
+\#define \mbox{\hyperlink{power_l_e_ds_8h_ac1d65b669819ef3d0879329fafcb8da9}{P\+W\+R\+\_\+\+S\+O\+L\+U\+T\+I\+O\+N\+\_\+\+C\+O\+U\+NT}}~3
+\begin{DoxyCompactList}\small\item\em number of power L\+ED drivers \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{power_l_e_ds_8h_a60b01ed2e3f328524c906ad2e1481c88}{P\+W\+R\+\_\+set\+\_\+value}} (uint32\+\_\+t channel, int32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set the set point of the selected power L\+ED driver. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{power_l_e_ds_8h_a7935805736bd5566e7ee9793f224c53b}{P\+W\+R\+\_\+get\+\_\+value}} (uint32\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Get the set point of the selected power L\+ED driver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{power_l_e_ds_8h_a2645a97196e2d49cae6faa63771813b8}{P\+W\+R\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Start all the power L\+ED drivers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+See \mbox{\hyperlink{power_l_e_ds_8c}{power\+L\+E\+Ds.\+c}}. 
+
+\DoxyHorRuler
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{power_l_e_ds_8h_a7935805736bd5566e7ee9793f224c53b}\label{power_l_e_ds_8h_a7935805736bd5566e7ee9793f224c53b}} 
+\index{powerLEDs.h@{powerLEDs.h}!PWR\_get\_value@{PWR\_get\_value}}
+\index{PWR\_get\_value@{PWR\_get\_value}!powerLEDs.h@{powerLEDs.h}}
+\doxysubsubsection{\texorpdfstring{PWR\_get\_value()}{PWR\_get\_value()}}
+{\footnotesize\ttfamily uint32\+\_\+t P\+W\+R\+\_\+get\+\_\+value (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{solution }\end{DoxyParamCaption})}
+
+
+
+Get the set point of the selected power L\+ED driver. 
+
+\DoxyHorRuler
+ 
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}solution\mbox{]}} & solution number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of set point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{power_l_e_ds_8h_a2645a97196e2d49cae6faa63771813b8}\label{power_l_e_ds_8h_a2645a97196e2d49cae6faa63771813b8}} 
+\index{powerLEDs.h@{powerLEDs.h}!PWR\_init@{PWR\_init}}
+\index{PWR\_init@{PWR\_init}!powerLEDs.h@{powerLEDs.h}}
+\doxysubsubsection{\texorpdfstring{PWR\_init()}{PWR\_init()}}
+{\footnotesize\ttfamily void P\+W\+R\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Start all the power L\+ED drivers. 
+
+\DoxyHorRuler
+ All the G\+P\+I\+Os are initialized and started. \mbox{\Hypertarget{power_l_e_ds_8h_a60b01ed2e3f328524c906ad2e1481c88}\label{power_l_e_ds_8h_a60b01ed2e3f328524c906ad2e1481c88}} 
+\index{powerLEDs.h@{powerLEDs.h}!PWR\_set\_value@{PWR\_set\_value}}
+\index{PWR\_set\_value@{PWR\_set\_value}!powerLEDs.h@{powerLEDs.h}}
+\doxysubsubsection{\texorpdfstring{PWR\_set\_value()}{PWR\_set\_value()}}
+{\footnotesize\ttfamily void P\+W\+R\+\_\+set\+\_\+value (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{solution,  }\item[{int32\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the set point of the selected power L\+ED driver. 
+
+\DoxyHorRuler
+ 
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}solution\mbox{]}} & solution number \\
+\hline
+{\em \mbox{[}value\mbox{]}} & value of set point\\
+\hline
+\end{DoxyParams}
+The L\+ED driver current is also adjusted accordingly. 

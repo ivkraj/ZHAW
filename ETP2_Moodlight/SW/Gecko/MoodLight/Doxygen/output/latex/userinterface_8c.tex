@@ -1,0 +1,192 @@
+\hypertarget{userinterface_8c}{}\doxysection{C\+:/\+Users/lars\+\_\+/\+Dropbox/\+E\+T\+P1/\+S\+W/\+Gecko\+\_\+\+Simple/src/userinterface.c File Reference}
+\label{userinterface_8c}\index{C:/Users/lars\_/Dropbox/ETP1/SW/Gecko\_Simple/src/userinterface.c@{C:/Users/lars\_/Dropbox/ETP1/SW/Gecko\_Simple/src/userinterface.c}}
+
+
+User interface.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+emu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}segmentlcd.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}userinterface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pushbuttons.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}touchslider.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}power\+L\+E\+Ds.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pwm.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dac.\+h\char`\"{}}\newline
+Include dependency graph for userinterface.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{userinterface_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{userinterface_8c_a217d6d63166032f1370ddc68471be9b7}\label{userinterface_8c_a217d6d63166032f1370ddc68471be9b7}} 
+\#define \mbox{\hyperlink{userinterface_8c_a217d6d63166032f1370ddc68471be9b7}{U\+I\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+O\+U\+NT}}~5
+\begin{DoxyCompactList}\small\item\em number of F\+SM states \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{userinterface_8c_a3b5d5c55f6a1a5f034ddba502d98ef12}\label{userinterface_8c_a3b5d5c55f6a1a5f034ddba502d98ef12}} 
+\#define \mbox{\hyperlink{userinterface_8c_a3b5d5c55f6a1a5f034ddba502d98ef12}{U\+I\+\_\+\+T\+E\+X\+T\+\_\+\+C\+O\+M\+P\+A\+R\+E\+\_\+\+L\+E\+N\+G\+TH}}~3
+\begin{DoxyCompactList}\small\item\em compare first x chars of string \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{userinterface_8c_a3ed53c1d9f6401e0a313841c26e585ed}\label{userinterface_8c_a3ed53c1d9f6401e0a313841c26e585ed}} 
+\#define \mbox{\hyperlink{userinterface_8c_a3ed53c1d9f6401e0a313841c26e585ed}{U\+I\+\_\+\+D\+E\+L\+AY}}~10000
+\begin{DoxyCompactList}\small\item\em user interface delay (in T\+I\+M\+E\+R0 ticks) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{userinterface_8c_aa9025a1123214371cc7f6a5bd90da00e}{U\+I\+\_\+state\+\_\+t}} \{ \newline
+{\bfseries D\+E\+S\+I\+G\+N\+\_\+0} = 0, 
+{\bfseries D\+E\+S\+I\+G\+N\+\_\+1}, 
+{\bfseries D\+E\+S\+I\+G\+N\+\_\+2}, 
+{\bfseries I\+D\+LE}, 
+\newline
+{\bfseries S\+T\+A\+RT}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{userinterface_8c_a15f87a06f768b9692b824c10a9c709df}{U\+I\+\_\+\+F\+S\+M\+\_\+event\+\_\+\+Touch}} (void)
+\begin{DoxyCompactList}\small\item\em Part of the user interface finite state machine\+: Touch events Reads for all Designs the slider value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{userinterface_8c_a6aa0164fdca845cfa640d17e630f6d65}{U\+I\+\_\+\+F\+S\+M\+\_\+event\+\_\+\+Pushbutton}} (void)
+\begin{DoxyCompactList}\small\item\em Part of the user interface finite state machine\+: Handling pushbutton events Pushbutton 0 performs a left rotation in the F\+SM, Pushbutton 1 however a right rotation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{userinterface_8c_a50df69c8866e000377a8bc7dbe685a58}{U\+I\+\_\+\+F\+S\+M\+\_\+event}} (void)
+\begin{DoxyCompactList}\small\item\em User interface finite state machine\+: Checks for events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{userinterface_8c_a0b01a6916c8c2e227ffd51e34a7cc87b}{U\+I\+\_\+\+F\+S\+M\+\_\+state\+\_\+value}} (void)
+\begin{DoxyCompactList}\small\item\em User interface finite state machine\+: Handled the events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{userinterface_8c_a9d9e7740b3f83ae8837fc1127fe34c19}{U\+I\+\_\+text}} \mbox{[}\mbox{\hyperlink{userinterface_8c_a217d6d63166032f1370ddc68471be9b7}{U\+I\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+O\+U\+NT}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em text for L\+CD \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{userinterface_8c_a22f7a3566a3e094b071ffc78fdadee6f}\label{userinterface_8c_a22f7a3566a3e094b071ffc78fdadee6f}} 
+\mbox{\hyperlink{userinterface_8c_aa9025a1123214371cc7f6a5bd90da00e}{U\+I\+\_\+state\+\_\+t}} \mbox{\hyperlink{userinterface_8c_a22f7a3566a3e094b071ffc78fdadee6f}{U\+I\+\_\+state\+\_\+next}} = S\+T\+A\+RT
+\begin{DoxyCompactList}\small\item\em next state of the F\+SM \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{userinterface_8c_ab1176a0278bf0edd4eae364bf6962d0c}\label{userinterface_8c_ab1176a0278bf0edd4eae364bf6962d0c}} 
+bool \mbox{\hyperlink{userinterface_8c_ab1176a0278bf0edd4eae364bf6962d0c}{U\+I\+\_\+state\+\_\+changed}} = true
+\begin{DoxyCompactList}\small\item\em state transition of the F\+SM \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{userinterface_8c_a013ac08e9dced26a43413e8cff21628c}\label{userinterface_8c_a013ac08e9dced26a43413e8cff21628c}} 
+int32\+\_\+t \mbox{\hyperlink{userinterface_8c_a013ac08e9dced26a43413e8cff21628c}{U\+I\+\_\+value\+\_\+next}} = 0
+\begin{DoxyCompactList}\small\item\em next value (if applicable) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{userinterface_8c_aed6241004af71a1ee341f3f17d62ad53}\label{userinterface_8c_aed6241004af71a1ee341f3f17d62ad53}} 
+bool \mbox{\hyperlink{userinterface_8c_aed6241004af71a1ee341f3f17d62ad53}{U\+I\+\_\+value\+\_\+changed}} = true
+\begin{DoxyCompactList}\small\item\em value changed \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+User interface. 
+
+\DoxyHorRuler
+
+
+This User interface contains 5 states. The user can switch between Design 0, 1 and 2 and reset these with pressing the gecko. In the idle state the software does nothing with the output ports.
+
+The user interface is implemented as a Finite State Machine.
+
+The {\bfseries{states}} are\+: ~\newline
+ D\+E\+S\+I\+G\+N0, D\+E\+S\+I\+G\+N1, D\+E\+S\+I\+G\+N2, I\+D\+LE, S\+T\+A\+RT
+
+The {\bfseries{events}} and {\bfseries{transitions}} are\+:
+\begin{DoxyDescription}
+\item[Touchgecko pressed ]Go to state S\+T\+A\+RT, initialize/reinitialize the system and switch to state I\+D\+LE. 
+\item[Touchslider touched (only in D\+E\+S\+I\+G\+N0, 1, 2) ]Adjust value of the currently active state. Only in Design 0,1 and 2 available 
+\item[Pushbutton 0 pressed ]Go one state to the right, wrap around from I\+D\+LE to D\+E\+S\+I\+G\+N2. 
+\item[Pushbutton 1 pressed ]Go one state to the left, wrap around from D\+E\+S\+I\+G\+N0 to I\+D\+LE. 
+\end{DoxyDescription}Any changes in state or value are reflected on the {\bfseries{display}}.
+
+Prefix\+: UI
+
+\begin{DoxyAuthor}{Author}
+Hanspeter Hochreutener (\href{mailto:hhrt@zhaw.ch}{\texttt{ hhrt@zhaw.\+ch}}) 
+
+Lars Mueggler (\href{mailto:muegglar@students.zhaw.ch}{\texttt{ muegglar@students.\+zhaw.\+ch}}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+13.\+12.\+2019 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{userinterface_8c_aa9025a1123214371cc7f6a5bd90da00e}\label{userinterface_8c_aa9025a1123214371cc7f6a5bd90da00e}} 
+\index{userinterface.c@{userinterface.c}!UI\_state\_t@{UI\_state\_t}}
+\index{UI\_state\_t@{UI\_state\_t}!userinterface.c@{userinterface.c}}
+\doxysubsubsection{\texorpdfstring{UI\_state\_t}{UI\_state\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{userinterface_8c_aa9025a1123214371cc7f6a5bd90da00e}{U\+I\+\_\+state\+\_\+t}}}
+
+Enum with the F\+SM states 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{userinterface_8c_a50df69c8866e000377a8bc7dbe685a58}\label{userinterface_8c_a50df69c8866e000377a8bc7dbe685a58}} 
+\index{userinterface.c@{userinterface.c}!UI\_FSM\_event@{UI\_FSM\_event}}
+\index{UI\_FSM\_event@{UI\_FSM\_event}!userinterface.c@{userinterface.c}}
+\doxysubsubsection{\texorpdfstring{UI\_FSM\_event()}{UI\_FSM\_event()}}
+{\footnotesize\ttfamily void U\+I\+\_\+\+F\+S\+M\+\_\+event (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+User interface finite state machine\+: Checks for events. 
+
+\DoxyHorRuler
+ Check if an event has occurred and define next state and value. \mbox{\Hypertarget{userinterface_8c_a6aa0164fdca845cfa640d17e630f6d65}\label{userinterface_8c_a6aa0164fdca845cfa640d17e630f6d65}} 
+\index{userinterface.c@{userinterface.c}!UI\_FSM\_event\_Pushbutton@{UI\_FSM\_event\_Pushbutton}}
+\index{UI\_FSM\_event\_Pushbutton@{UI\_FSM\_event\_Pushbutton}!userinterface.c@{userinterface.c}}
+\doxysubsubsection{\texorpdfstring{UI\_FSM\_event\_Pushbutton()}{UI\_FSM\_event\_Pushbutton()}}
+{\footnotesize\ttfamily void U\+I\+\_\+\+F\+S\+M\+\_\+event\+\_\+\+Pushbutton (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Part of the user interface finite state machine\+: Handling pushbutton events Pushbutton 0 performs a left rotation in the F\+SM, Pushbutton 1 however a right rotation. 
+
+\DoxyHorRuler
+ \mbox{\Hypertarget{userinterface_8c_a15f87a06f768b9692b824c10a9c709df}\label{userinterface_8c_a15f87a06f768b9692b824c10a9c709df}} 
+\index{userinterface.c@{userinterface.c}!UI\_FSM\_event\_Touch@{UI\_FSM\_event\_Touch}}
+\index{UI\_FSM\_event\_Touch@{UI\_FSM\_event\_Touch}!userinterface.c@{userinterface.c}}
+\doxysubsubsection{\texorpdfstring{UI\_FSM\_event\_Touch()}{UI\_FSM\_event\_Touch()}}
+{\footnotesize\ttfamily void U\+I\+\_\+\+F\+S\+M\+\_\+event\+\_\+\+Touch (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Part of the user interface finite state machine\+: Touch events Reads for all Designs the slider value. 
+
+\DoxyHorRuler
+ \begin{DoxyNote}{Note}
+Because the HW of all solutions can provide more than 350mA, the slider value is limited! 
+\end{DoxyNote}
+\mbox{\Hypertarget{userinterface_8c_a0b01a6916c8c2e227ffd51e34a7cc87b}\label{userinterface_8c_a0b01a6916c8c2e227ffd51e34a7cc87b}} 
+\index{userinterface.c@{userinterface.c}!UI\_FSM\_state\_value@{UI\_FSM\_state\_value}}
+\index{UI\_FSM\_state\_value@{UI\_FSM\_state\_value}!userinterface.c@{userinterface.c}}
+\doxysubsubsection{\texorpdfstring{UI\_FSM\_state\_value()}{UI\_FSM\_state\_value()}}
+{\footnotesize\ttfamily void U\+I\+\_\+\+F\+S\+M\+\_\+state\+\_\+value (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+User interface finite state machine\+: Handled the events. 
+
+\DoxyHorRuler
+ Switch to the next state and/or adjust the value. 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{userinterface_8c_a9d9e7740b3f83ae8837fc1127fe34c19}\label{userinterface_8c_a9d9e7740b3f83ae8837fc1127fe34c19}} 
+\index{userinterface.c@{userinterface.c}!UI\_text@{UI\_text}}
+\index{UI\_text@{UI\_text}!userinterface.c@{userinterface.c}}
+\doxysubsubsection{\texorpdfstring{UI\_text}{UI\_text}}
+{\footnotesize\ttfamily char$\ast$ U\+I\+\_\+text\mbox{[}\mbox{\hyperlink{userinterface_8c_a217d6d63166032f1370ddc68471be9b7}{U\+I\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+O\+U\+NT}}\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{        \textcolor{stringliteral}{"DESIGN0"}, \textcolor{stringliteral}{"DESIGN1"}, \textcolor{stringliteral}{"DESIGN2"}, \textcolor{stringliteral}{"IDLE"}, \textcolor{stringliteral}{"START"}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+text for L\+CD 
+

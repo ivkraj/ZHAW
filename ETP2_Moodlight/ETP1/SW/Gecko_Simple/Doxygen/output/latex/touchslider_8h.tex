@@ -1,0 +1,78 @@
+\hypertarget{touchslider_8h}{}\doxysection{C\+:/\+Users/lars\+\_\+/\+Dropbox/\+E\+T\+P1/\+S\+W/\+Gecko\+\_\+\+Simple/src/inc/touchslider.h File Reference}
+\label{touchslider_8h}\index{C:/Users/lars\_/Dropbox/ETP1/SW/Gecko\_Simple/src/inc/touchslider.h@{C:/Users/lars\_/Dropbox/ETP1/SW/Gecko\_Simple/src/inc/touchslider.h}}
+
+
+See \mbox{\hyperlink{touchslider_8c}{touchslider.\+c}}.  
+
+
+{\ttfamily \#include \char`\"{}capsense.\+h\char`\"{}}\newline
+Include dependency graph for touchslider.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{touchslider_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{touchslider_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{touchslider_8h_a395af876ae382a10fb597db5a358d128}{C\+A\+P\+S\+E\+N\+S\+E\+\_\+get\+Slider\+Value}} (int32\+\_\+t slider\+Min, int32\+\_\+t slider\+Max)
+\begin{DoxyCompactList}\small\item\em Get the position of the slider with respect to minimum and maximum values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile bool \mbox{\hyperlink{touchslider_8h_a480694b73d491af454a7b6d5c8fcddd7}{touchslider\+Flag}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+See \mbox{\hyperlink{touchslider_8c}{touchslider.\+c}}. 
+
+\DoxyHorRuler
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{touchslider_8h_a395af876ae382a10fb597db5a358d128}\label{touchslider_8h_a395af876ae382a10fb597db5a358d128}} 
+\index{touchslider.h@{touchslider.h}!CAPSENSE\_getSliderValue@{CAPSENSE\_getSliderValue}}
+\index{CAPSENSE\_getSliderValue@{CAPSENSE\_getSliderValue}!touchslider.h@{touchslider.h}}
+\doxysubsubsection{\texorpdfstring{CAPSENSE\_getSliderValue()}{CAPSENSE\_getSliderValue()}}
+{\footnotesize\ttfamily int32\+\_\+t C\+A\+P\+S\+E\+N\+S\+E\+\_\+get\+Slider\+Value (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{slider\+Min,  }\item[{int32\+\_\+t}]{slider\+Max }\end{DoxyParamCaption})}
+
+
+
+Get the position of the slider with respect to minimum and maximum values. 
+
+\DoxyHorRuler
+ 
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}slider\+Min\mbox{]}} & sliderposition range is slider\+Min ... slider\+Max \\
+\hline
+{\em \mbox{[}slider\+Max\mbox{]}} & sliderposition range is slider\+Min ... slider\+Max \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+position of the slider if it can be determined, -\/11111 otherwise 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The variable touchslider\+Flag is set/reset and can then be handled asynchronously and cleared explicitly after handling.
+\end{DoxyNote}
+Function \char`\"{}\+C\+A\+P\+S\+E\+N\+S\+E\+\_\+get\+Slider\+Position()\char`\"{} copied from \char`\"{}caplesense.\+c\char`\"{} and slightly modified for freely definable range/resolution of sliderposition 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{touchslider_8h_a480694b73d491af454a7b6d5c8fcddd7}\label{touchslider_8h_a480694b73d491af454a7b6d5c8fcddd7}} 
+\index{touchslider.h@{touchslider.h}!touchsliderFlag@{touchsliderFlag}}
+\index{touchsliderFlag@{touchsliderFlag}!touchslider.h@{touchslider.h}}
+\doxysubsubsection{\texorpdfstring{touchsliderFlag}{touchsliderFlag}}
+{\footnotesize\ttfamily volatile bool touchslider\+Flag}
+
+\DoxyHorRuler
+ This flag is set/reset when \mbox{\hyperlink{touchslider_8c_a395af876ae382a10fb597db5a358d128}{C\+A\+P\+S\+E\+N\+S\+E\+\_\+get\+Slider\+Value()}} is called. ~\newline
+ true = touchslider is touched ~\newline
+ The flag may be reset externally if the new value has been processed 

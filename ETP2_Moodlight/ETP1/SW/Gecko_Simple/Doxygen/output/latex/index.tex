@@ -1,0 +1,62 @@
+\DoxyHorRuler
+\hypertarget{index_selc1}{}\doxysection{Abstract}\label{index_selc1}
+This software (SW) implements three controllable buck converters for an L\+ED Moodlight. These solutions were developed in advance and are used as L\+ED drivers. The current can be regulated linear between 0mA and 350mA. \textquotesingle{}Solution 0\textquotesingle{} and \textquotesingle{}Solution 1\textquotesingle{} use the IC \href{https://www.diodes.com/assets/Datasheets/ZXLD1350.pdf}{\texttt{ Z\+X\+L\+D1350}} to control the current. For \textquotesingle{}Solution 2\textquotesingle{} the current regulation is done by SW with a PI controller. This solution needs a buck converter and the IC \href{https://www.diodes.com/assets/Datasheets/ZXCT1107_10.pdf}{\texttt{ Z\+X\+C\+T1110}} for current measuring. All solutions are working without any problems. The regulation of \textquotesingle{}Solution 2\textquotesingle{} has a current ripple of about 3 mA, which leads to flickering of the L\+E\+Ds at the lower current range.\hypertarget{index_selc}{}\doxysection{Overview}\label{index_selc}
+The L\+E\+Ds are driven by our own developed HW and a microcontroller SW, written in C. 
+
+For the user interface we received a microcontroller evaluation board \href{https://www.silabs.com/products/development-tools/mcu/32-bit/efm32-gecko-starter-kit}{\texttt{ E\+F\+M32\+G890\+F128}} (Gecko). This evaluation board contains pushbuttons to choose between the solutions, a touchslider to change the current and a touchgecko to make a restart. 
+
+The F\+SM is set up as follow\+: \hypertarget{index_selc2}{}\doxysection{Specification of the project purpose}\label{index_selc2}
+The purpose of this project is to develop the hardware and software for a buck converter which can be used for a Moodlight. Three different prototypes were designed, built and evaluated. This documentation contains the SW for these prototypes. The goal of this project is to develop a buck converter that is easy to use, reliable and can regulate almost linear the current through the L\+E\+Ds from 0mA to 350 mA.\hypertarget{index_selc3}{}\doxysection{Description of the files and modules}\label{index_selc3}
+The {\itshape \mbox{\hyperlink{main_8c}{main.\+c}}} file only contains the main function with its initializations of the whole system. The user interface is programmed as a finite state machine (F\+SM) and reads the actual value of the touchslider. It can be found in the {\itshape \mbox{\hyperlink{userinterface_8c}{userinterface.\+c}}} file. This file also controls the I/O\textquotesingle{}s of the individual solutions. The initialization of the touchslider and the functions to read the touchslider value are in the {\itshape \mbox{\hyperlink{touchslider_8c}{touchslider.\+c}}} file. Pushbutton functions are implemented in the {\itshape \mbox{\hyperlink{pushbuttons_8c}{pushbuttons.\+c}}} file. The functions to control the L\+E\+Ds of the Gecko-\/\+Starterkit are in the {\itshape \mbox{\hyperlink{signal_l_e_ds_8c}{signal\+L\+E\+Ds.\+c}}} file. All these files and templates were taken from the \char`\"{}\+Mood\+Light\+\_\+\+Template\+\_\+\+S\+D\+K581.\+zip\char`\"{} and customized. \textquotesingle{}Solution 0\textquotesingle{} and \textquotesingle{}Solution 1\textquotesingle{} are implemented in the {\itshape \mbox{\hyperlink{power_l_e_ds_8c}{power\+L\+E\+Ds.\+c}}} file. The functions of these two solutions are in the files {\itshape \mbox{\hyperlink{dac_8c}{dac.\+c}}} and {\itshape \mbox{\hyperlink{pwm_8c}{pwm.\+c}}}. The PI controller in \textquotesingle{}Solution 2\textquotesingle{} and its functions are implemented in the {\itshape \mbox{\hyperlink{pwm_8c}{pwm.\+c}}} file. The control loop of PI controller uses the functions of the {\itshape \mbox{\hyperlink{adc_8c}{adc.\+c}}} file. In the {\itshape \mbox{\hyperlink{globals_8c}{globals.\+c}}} file some constants were implemented.\hypertarget{index_selc4}{}\doxysection{Code Guideline}\label{index_selc4}
+
+\begin{DoxyItemize}
+\item Define constants and use them to make the code easier to read and to understand
+\item Use modular design to make the code clearly arranged
+\item Capitalization style\+: use Prefix at every function, the variables and function should be in the style like var\+\_\+1, and P\+R\+E\+F\+I\+X\+\_\+function\+\_\+2
+\item Bodies of functions, loops, if-\/else statements, etc. should be indented and statements within the same body-\/level should be indented the same amount
+\item Comment the code\+: every file should have a short description what the purpose of the file is, who\textquotesingle{}s the author and the date. Every function should have a comment with the parameters and purpose.
+\item No floating point operation and division realised with shift operation
+\end{DoxyItemize}\hypertarget{index_selc5}{}\doxysection{\textquotesingle{}\+Solution 0/1\textquotesingle{}}\label{index_selc5}
+\hypertarget{index_selc6}{}\doxysubsection{Description}\label{index_selc6}
+\textquotesingle{}Solution 0\textquotesingle{} uses an P\+WM signal of 400Hz to adjust the current of the L\+E\+Ds. There is no control loop. The current is set directly to the value of the touchslider. \textquotesingle{}Solution 1\textquotesingle{} uses a DC level to adjust the current of the L\+E\+Ds. The principle is the same as for \textquotesingle{}Solution 0\textquotesingle{}. There is no control loop and the current is set directly to the value of the touchslider.\hypertarget{index_selc7}{}\doxysubsection{Approach}\label{index_selc7}
+Because there is no control loop in both solutions, the implementations is quite simple. The only difficulty was to convert the slider value correctly and to initialize the Low Energy Timer.\hypertarget{index_selc8}{}\doxysubsection{Tests}\label{index_selc8}
+The current through the L\+E\+Ds can be regulated smoothly and the current can be varied between 0mA and 350mA. Because there is no control loop, it\textquotesingle{}s not necessary to do more tests. Only the set value has to correspond to the actual value.\hypertarget{index_selc9}{}\doxysubsection{Conclusion}\label{index_selc9}
+These two solution works as expected. The current can be regulated smoothly from 0mA to 350mA. Both solutions are implemented on the same input pin. ~\newline
+ To select one of these solutions, it\textquotesingle{}s necessary to move the jumper J2.\hypertarget{index_selc10}{}\doxysection{\textquotesingle{}\+Solution 2\textquotesingle{}}\label{index_selc10}
+\hypertarget{index_selc11}{}\doxysubsection{Description}\label{index_selc11}
+\textquotesingle{}Solution 2\textquotesingle{} uses the PI controller to control the current. The A\+D\+C0 measures a voltage that is proportional to the L\+ED current. The A\+DC value is compared to the slider value and the P\+WM is continuously regulated to get the target current through the L\+E\+Ds. The PI controller compares and adjusts every 0.\+1 ms the current through the L\+E\+Ds when solution 2 is selected. The function call of the PI controller is realised with a T\+I\+M\+E\+R2-\/interrupt.
+
+ Description\+: The PI controller is realised in the function {\itshape P\+I\+\_\+\+Controller\+\_\+\+Adjust\+\_\+\+Current()}. First of all the PI controller calculates the difference between the actual current and the set value. This difference gets multiplied with a P-\/ and an I-\/component. Due to the P-\/value, the step response of the control loop is very high, but there is still a deviation to the set value. The function of the I-\/component is to regulate the system deviation slowly but precisely to zero. The connection of the P-\/component and the I-\/components builds a functional control loop to adjust the current.\hypertarget{index_selc12}{}\doxysubsection{Approach}\label{index_selc12}
+To get a good P-\/ and I-\/value, the I-\/value of the control loop was set to zero firstly. The P-\/value was adapted until the output signal of the control loop started to oscillate. The received P-\/value was then multiplied with the factor 0.\+45 (Ziegler-\/\+Nichols) to get the final P-\/value. For a proper I-\/value, the I-\/value was adapted until the step response of the control loop was acceptable. Means the reaction of the PI controller should be fast and there should not be any overshooting.\hypertarget{index_selc13}{}\doxysubsection{Tests}\label{index_selc13}
+The current through the L\+E\+Ds can be regulated smoothly. Flickering is just visible at the lower current range (approx. 20mA).The controller has no overshooting at any point of time. The current can be regulated between 0mA and 350mA. To control the functionality of the PI controller, it is necessary to check the step response of the control loop and the remaining deviation. These functionalities were checked at the A\+DC output of the IC Z\+X\+C\+T1110.
+
+
+
+The controller takes less than 2ms to respond to a fast change of the set current and there is no overshoot visible. This fast reaction time is due to the P-\/component. The deviation that remains is maximum 0.\+28V.
+
+ The controller takes about 20ms from the adjusted current down to almost 0mA and has no overshoot. This slow step response is due to the I-\/component of the control loop.\hypertarget{index_selc14}{}\doxysubsection{Conclusion}\label{index_selc14}
+The PI controller works as expected at the higher current range. At the lower current range the L\+E\+Ds are flickering. Because the A\+DC needs approx. 40us to measure a new value, the control loop can\textquotesingle{}t regulate with a higher frequency than the A\+DC. This leads to remaining current ripple of 3mA. Because the control frequency is set to 10k\+Hz, there is an audible coil whine.\hypertarget{index_selc15}{}\doxysection{Results}\label{index_selc15}
+\textquotesingle{}Solution 0\textquotesingle{} and \textquotesingle{}Solution 1\textquotesingle{} are working properly. The current through the L\+E\+Ds can be regulated linear. The implementation of the these two solutions was not very difficult compared to \textquotesingle{}Solution 2\textquotesingle{}. Only the conversion for the input to the output had to be done. ~\newline
+ However the implementation of \textquotesingle{}Solution 2\textquotesingle{} was more complex. The PI controller works as wished, but there is an audible coil whine. The calculation effort is low and takes almost no time because the SW only operates with integer values. The most time-\/consuming operation is, to get a new A\+DC value. The solution uses an timer interrupt, which leads to an accurate regulation of the current. In the lower current range, the L\+E\+Ds are flickering, because the current ripple makes up a larger percentage of the flowing current and therefore the effect of the PI controller is visible.
+
+\DoxyHorRuler
+ ~\newline
+ Board\+: Starter Kit E\+F\+M32-\/\+G8\+X\+X-\/\+S\+TK Device\+: E\+F\+M32\+G890\+F128 (Gecko)
+
+\begin{DoxyAuthor}{Author}
+Hanspeter Hochreutener (\href{mailto:hhrt@zhaw.ch}{\texttt{ hhrt@zhaw.\+ch}}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+15.\+7.\+2015
+\end{DoxyDate}
+Edited by \begin{DoxyAuthor}{Author}
+Lars Mueggler (\href{mailto:muegglar@students.zhaw.ch}{\texttt{ muegglar@students.\+zhaw.\+ch}}) 
+
+Ivan Krajinovic (\href{mailto:krajiiva@students.zhaw.ch}{\texttt{ krajiiva@students.\+zhaw.\+ch}}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+11.\+12.\+2019 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}

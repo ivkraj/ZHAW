@@ -1,0 +1,98 @@
+\hypertarget{adc_8c}{}\doxysection{C\+:/\+Users/lars\+\_\+/\+Dropbox/\+E\+T\+P1/\+S\+W/\+Gecko\+\_\+\+Simple/src/adc.c File Reference}
+\label{adc_8c}\index{C:/Users/lars\_/Dropbox/ETP1/SW/Gecko\_Simple/src/adc.c@{C:/Users/lars\_/Dropbox/ETP1/SW/Gecko\_Simple/src/adc.c}}
+
+
+A\+DC.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+chip.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+device.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+cmu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+emu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}em\+\_\+adc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}adc.\+h\char`\"{}}\newline
+Include dependency graph for adc.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{adc_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{adc_8c_af5a6435e056e19d7bef77b506cf2695a}{A\+D\+C0\+\_\+read\+\_\+one}} (void)
+\begin{DoxyCompactList}\small\item\em Read the converted value from A\+D\+C0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{adc_8c_a937893a27507b2e4a3f506909090c0cb}{A\+D\+C0\+\_\+start\+\_\+one}} (void)
+\begin{DoxyCompactList}\small\item\em Start A\+D\+C0 for one single conversion. This function starts one single conversion from the A\+DC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{adc_8c_a2afeb0903a6c067c9e51a8e6372b15e2}{A\+D\+C0\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialization of the A\+DC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A\+DC. 
+
+\DoxyHorRuler
+
+
+All the functions needed for the A\+DC.
+
+Prefix\+: A\+DC
+
+Board\+: Starter Kit E\+F\+M32-\/\+G8\+X\+X-\/\+S\+TK Device\+: E\+F\+M32\+G890\+F128 (Gecko)
+
+\begin{DoxyAuthor}{Author}
+Lars Mueggler (\href{mailto:muegglar@students.zhaw.ch}{\texttt{ muegglar@students.\+zhaw.\+ch}}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+21.\+10.\+2019 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{adc_8c_a2afeb0903a6c067c9e51a8e6372b15e2}\label{adc_8c_a2afeb0903a6c067c9e51a8e6372b15e2}} 
+\index{adc.c@{adc.c}!ADC0\_init@{ADC0\_init}}
+\index{ADC0\_init@{ADC0\_init}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{ADC0\_init()}{ADC0\_init()}}
+{\footnotesize\ttfamily void A\+D\+C0\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialization of the A\+DC. 
+
+\DoxyHorRuler
+ This function initializes the A\+D\+C0. \mbox{\Hypertarget{adc_8c_af5a6435e056e19d7bef77b506cf2695a}\label{adc_8c_af5a6435e056e19d7bef77b506cf2695a}} 
+\index{adc.c@{adc.c}!ADC0\_read\_one@{ADC0\_read\_one}}
+\index{ADC0\_read\_one@{ADC0\_read\_one}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{ADC0\_read\_one()}{ADC0\_read\_one()}}
+{\footnotesize\ttfamily uint32\+\_\+t A\+D\+C0\+\_\+read\+\_\+one (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Read the converted value from A\+D\+C0. 
+
+\DoxyHorRuler
+ This function reads a single value from the A\+D\+C0.
+
+\begin{DoxyReturn}{Returns}
+A\+DC reading 
+\end{DoxyReturn}
+\mbox{\Hypertarget{adc_8c_a937893a27507b2e4a3f506909090c0cb}\label{adc_8c_a937893a27507b2e4a3f506909090c0cb}} 
+\index{adc.c@{adc.c}!ADC0\_start\_one@{ADC0\_start\_one}}
+\index{ADC0\_start\_one@{ADC0\_start\_one}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{ADC0\_start\_one()}{ADC0\_start\_one()}}
+{\footnotesize\ttfamily void A\+D\+C0\+\_\+start\+\_\+one (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Start A\+D\+C0 for one single conversion. This function starts one single conversion from the A\+DC. 
+
+\DoxyHorRuler
+ 

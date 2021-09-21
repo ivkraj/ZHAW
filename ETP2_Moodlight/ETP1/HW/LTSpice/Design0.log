@@ -1,0 +1,245 @@
+
+   --- Expanded Deck Component Count ---
+B's 1
+C's 10
+D's 9
+E's 3
+F's 1
+G's 2
+I's 1
+L's 1
+R's 25
+S's 7
+V's 7
+tot: 67
+
+
+    --- Expanded Netlist ---
+* C:\Users\lars_\Dropbox\ETP1\HW\LTSpice\Design0.asc
+v1 24vdc 0 24
+r1 24vdc led+ 0.3
+c1 24vdc 0 10µ
+c2 led- led+ 1µ
+l1 n001 led- 680µ
+d1 n001 24vdc ss13l
+d2 led+ n002 lxhl-bw02
+d3 n002 n003 lxhl-bw02
+d4 n003 p001 lxhl-bw02
+d5 p001 p002 lxhl-bw02
+e:u1:2 u1:19 0 24vdc 0 1
+b:u1:111 u1:14 0 v=min(v(u1:19), 1.25)
+r:u1:3 u1:14 u1:19 20k
+r:u1:4 u1:14 a 200k
+c:u1:1 u1:15 0 5p ic=0
+c:u1:2 u1:16 0 5p ic=0
+c:u1:3 u1:17 0 5p ic=0
+r:u1:5 a u1:15 7.7meg
+r:u1:6 u1:15 u1:16 7.7meg
+r:u1:7 u1:16 u1:17 7.7meg
+e:u1:7 u1:12 0 u1:17 0 1
+r:u1:8 u1:12 u1:adj_lockout 1000
+i:u1:1 u1:12 u1:adj_lockout dc 50ua
+c:u1:7 u1:adj_lockout u1:12 1p ic=0
+s:u1:_s4:_s4 u1:adj_lockout u1:12 u1:adj_lockout 0 u1:_s4:s4 
+r:u1:_s4:s_s4 u1:adj_lockout 0 1g
+s:u1:_s5:_s5 u1:23 0 u1:adj_lockout 0 u1:_s5:s5 
+r:u1:_s5:s_s5 u1:adj_lockout 0 1g
+s:u1:_s6:_s6 u1:23 0 24vdc 0 u1:_s6:s6 
+r:u1:_s6:s_s6 24vdc 0 1g
+g:u1:2 0 u1:8 24vdc led+ 1m
+c:u1:4 0 led+ 20p
+r:u1:9 0 u1:9 3.832k
+r:u1:10 u1:9 u1:8 10.859k
+s:u1:_s7:_s7 u1:9 0 u1:23 0 u1:_s7:s7 
+r:u1:_s7:s_s7 u1:23 0 1g
+g:u1:3 u1:21 0 u1:8 u1:12 1000m
+r:u1:11 0 u1:21 1meg
+v:u1:3 u1:24 0 700mv
+d:u1:8 u1:24 u1:21 u1:dclamp 
+v:u1:4 u1:22 0 6v
+d:u1:9 u1:21 u1:22 u1:dclamp 
+e:u1:4 u1:25 0 u1:21 0 1
+c:u1:6 0 u1:23 25p
+r:u1:13 u1:23 u1:25 2k
+s:u1:_s8:_s8 u1:11 0 u1:23 0 u1:_s8:s8 
+r:u1:_s8:s_s8 u1:23 0 1g
+r:u1:12 u1:11 n001 0.4
+c:u1:5 0 n001 100p
+s:u1:_s3:_s3 u1:4 u1:7 u1:adj_lockout 0 u1:_s3:s3 
+r:u1:_s3:s_s3 u1:adj_lockout 0 1g
+r:u1:1 0 u1:7 1.58k
+r:u1:2 0 u1:4 67k
+s:u1:_s2:_s2 u1:6 u1:4 24vdc 0 u1:_s2:s2 
+r:u1:_s2:s_s2 24vdc 0 1g
+v:u1:1 u1:5 0 1v
+f:u1:_f1:_f1 24vdc 0 v:u1:_f1:f_f1 1
+v:u1:_f1:f_f1 u1:6 u1:5 0v
+v:u1:99 u1:99 0 dc 0 ac 0 pulse 0 0 0 100n 100n 500n 1u
+r:u1:99 u1:99 0 100
+c3 a 0 10p
+v2 pwm 0 pulse(0 3.3 0 0 0 0.2m 2m)
+r3 n004 0 1.3k
+r4 n004 pwm 2k
+d7 p002 p003 lxhl-bw02
+d8 p003 led- lxhl-bw02
+r2 n004 a 4.7k
+.model ss13l d(is=1.4837e-6 n=1.0443 rs=54.747e-3 ikf=.44154 cjo=147.94e-12 m=.49997 vj=1.0845 isr=205.41e-9 nr=4.9950 bv=30 ibv=10e-6 tt=7.3989e-9 type=schottky)
+.model lxhl-bw02 d(is=4.5e-20 rs=.85 n=2.6 cjo=1.18n xti=200 iave=400ma vpk=5 mfg=lumileds type=led)
+.model u1:dclamp d is=2.682n n=1.836 rs=.5664 ikf=44.17m cjo=4p m=.3333 vj=.5
+.model u1:_s2:s2 vswitch roff=1e6 ron=1.0 voff=1.248v von=1.25v
+.model u1:_s3:s3 vswitch roff=1e6 ron=1.0 voff=198mv von=200mv
+.model u1:_s8:s8 vswitch roff=10e6 ron=1.0 voff=2750mv von=2755mv
+.model u1:_s7:s7 vswitch roff=10e6 ron=1.0 voff=2750mv von=2755mv
+.model u1:_s6:s6 vswitch roff=10e6 ron=1.0 voff=6.505v von=6.495v
+.model u1:_s5:s5 vswitch roff=10e6 ron=1.0 voff=251mv von=249mv
+.model u1:_s4:s4 vswitch roff=10e6 ron=1 voff=255mv von=245mv
+.tran 10m
+.end
+
+Limiting rise time of source v2 to 2e-005
+Limiting fall time of source v2 to 2e-005
+Direct Newton iteration for .op point succeeded.
+Ignoring empty pin current: Ix(_s4:1)
+Ignoring empty pin current: Ix(_s4:2)
+Ignoring empty pin current: Ix(_s4:3)
+Ignoring empty pin current: Ix(_s4:4)
+Ignoring empty pin current: Ix(_s5:1)
+Ignoring empty pin current: Ix(_s5:2)
+Ignoring empty pin current: Ix(_s5:3)
+Ignoring empty pin current: Ix(_s5:4)
+Ignoring empty pin current: Ix(_s6:1)
+Ignoring empty pin current: Ix(_s6:2)
+Ignoring empty pin current: Ix(_s6:3)
+Ignoring empty pin current: Ix(_s6:4)
+Ignoring empty pin current: Ix(_s7:1)
+Ignoring empty pin current: Ix(_s7:2)
+Ignoring empty pin current: Ix(_s7:3)
+Ignoring empty pin current: Ix(_s7:4)
+Ignoring empty pin current: Ix(_s8:1)
+Ignoring empty pin current: Ix(_s8:2)
+Ignoring empty pin current: Ix(_s8:3)
+Ignoring empty pin current: Ix(_s8:4)
+Ignoring empty pin current: Ix(_s3:1)
+Ignoring empty pin current: Ix(_s3:2)
+Ignoring empty pin current: Ix(_s3:3)
+Ignoring empty pin current: Ix(_s3:4)
+Ignoring empty pin current: Ix(_s2:1)
+Ignoring empty pin current: Ix(_s2:2)
+Ignoring empty pin current: Ix(_s2:3)
+Ignoring empty pin current: Ix(_s2:4)
+Ignoring empty pin current: Ix(_f1:1)
+Ignoring empty pin current: Ix(_f1:2)
+Ignoring empty pin current: Ix(_f1:3)
+Ignoring empty pin current: Ix(_f1:4)
+Ignoring empty pin current: Ix(u1:18)
+Ignoring empty pin current: Ix(_s4:1)
+Ignoring empty pin current: Ix(_s4:2)
+Ignoring empty pin current: Ix(_s4:3)
+Ignoring empty pin current: Ix(_s4:4)
+Ignoring empty pin current: Ix(_s5:1)
+Ignoring empty pin current: Ix(_s5:2)
+Ignoring empty pin current: Ix(_s5:3)
+Ignoring empty pin current: Ix(_s5:4)
+Ignoring empty pin current: Ix(_s6:1)
+Ignoring empty pin current: Ix(_s6:2)
+Ignoring empty pin current: Ix(_s6:3)
+Ignoring empty pin current: Ix(_s6:4)
+Ignoring empty pin current: Ix(_s7:1)
+Ignoring empty pin current: Ix(_s7:2)
+Ignoring empty pin current: Ix(_s7:3)
+Ignoring empty pin current: Ix(_s7:4)
+Ignoring empty pin current: Ix(_s8:1)
+Ignoring empty pin current: Ix(_s8:2)
+Ignoring empty pin current: Ix(_s8:3)
+Ignoring empty pin current: Ix(_s8:4)
+Ignoring empty pin current: Ix(_s3:1)
+Ignoring empty pin current: Ix(_s3:2)
+Ignoring empty pin current: Ix(_s3:3)
+Ignoring empty pin current: Ix(_s3:4)
+Ignoring empty pin current: Ix(_s2:1)
+Ignoring empty pin current: Ix(_s2:2)
+Ignoring empty pin current: Ix(_s2:3)
+Ignoring empty pin current: Ix(_s2:4)
+Ignoring empty pin current: Ix(_f1:1)
+Ignoring empty pin current: Ix(_f1:2)
+Ignoring empty pin current: Ix(_f1:3)
+Ignoring empty pin current: Ix(_f1:4)
+Ignoring empty pin current: Ix(u1:18)
+Heightened Def Con from 1e-005 to 1e-005
+Heightened Def Con from 1e-005 to 1.00002e-005
+Heightened Def Con from 8.64505e-005 to 8.64509e-005
+Heightened Def Con from 0.000115646 to 0.000115646
+Heightened Def Con from 0.000119 to 0.000119002
+Heightened Def Con from 0.000137 to 0.000137
+Heightened Def Con from 0.000137 to 0.000137002
+Heightened Def Con from 0.00022554 to 0.000225541
+Heightened Def Con from 0.000428241 to 0.000428242
+Heightened Def Con from 0.00057186 to 0.000571861
+Heightened Def Con from 0.000582822 +to 0.000582823
+Heightened Def Con from 0.002057 to 0.002057
+Heightened Def Con from 0.00208738 to 0.00208738
+Heightened Def Con from 0.00208738 to 0.00208738
+Heightened Def Con from 0.00211663 to 0.00211663
+Heightened Def Con from 0.002134 to 0.002134
+Heightened Def Con from 0.002141 to 0.002141
+Heightened Def Con from 0.00217141 +to 0.00217141
+Heightened Def Con from 0.00229 to 0.00229
+Heightened Def Con from 0.00234073 to 0.00234073
+Heightened Def Con from 0.00234073 to 0.00234073
+Heightened Def Con from 0.00247307 to 0.00247307
+Heightened Def Con from 0.00248489 to 0.00248489
+Heightened Def Con from 0.00251363 to 0.00251363
+Heightened Def Con from 0.00255096 to 0.00255096
+Heightened Def Con from 0.00258511 to 0.00258511
+Heightened Def Con from 0.00408749 to 0.00408749
+Heightened Def Con from 0.00408749 to 0.00408749
+Heightened Def Con from 0.0040977 to 0.0040977
+Heightened Def Con from 0.00439015 to 0.00439015
+Heightened Def Con from 0.0044915 +to 0.0044915
+Heightened Def Con from 0.00451034 to 0.00451034
+Heightened Def Con from 0.00453001 to 0.00453001
+Heightened Def Con from 0.00456773 to 0.00456773
+Heightened Def Con from 0.00457041 to 0.00457041
+Heightened Def Con from 0.00608108 to 0.00608108
+Heightened Def Con from 0.00609517 +to 0.00609517
+Heightened Def Con from 0.00618272 to 0.00618272
+Heightened Def Con from 0.00620044 to 0.00620044
+Heightened Def Con from 0.00621322 to 0.00621322
+Heightened Def Con from 0.00629836 +to 0.00629836
+Heightened Def Con from 0.00646379 to 0.00646379
+Heightened Def Con from 0.00652593 to 0.00652593
+Heightened Def Con from 0.00652593 to 0.00652593
+Heightened Def Con from 0.00812093 to 0.00812093
+Heightened Def Con from 0.00818073 to 0.00818073
+Heightened Def Con from 0.00821318 to 0.00821318
+Heightened Def Con from 0.00827033 to 0.00827033
+Heightened Def Con from 0.00827033 to 0.00827033
+Heightened Def Con from 0.00832495 to 0.00832495
+Heightened Def Con from 0.00832703 to 0.00832703
+Heightened Def Con from 0.00833511 to 0.00833511
+Heightened Def Con from 0.0084988 to 0.0084988
+Heightened Def Con from 0.0084988 to 0.0084988
+Heightened Def Con from 0.00855871 to 0.00855871
+Heightened Def Con from 0.00855871 to 0.00855871
+Heightened Def Con from 0.00857039 to 0.00857039
+Heightened Def Con from 0.00857824 to 0.00857824
+Heightened Def Con from 0.00857824 to 0.00857824
+Heightened Def Con from 0.00858511 to 0.00858511
+
+Date: Fri Nov 15 22:08:15 2019
+Total elapsed time: 17.202 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 1324406
+traniter = 1324375
+tranpoints = 513464
+accept = 406833
+rejected = 106696
+matrix size = 52
+fillins = 26
+solver = Normal
+Matrix Compiler1: 2.95 KB object code size  1.4/0.8/[0.5]
+Matrix Compiler2: off  [0.7]/1.4/1.0
+

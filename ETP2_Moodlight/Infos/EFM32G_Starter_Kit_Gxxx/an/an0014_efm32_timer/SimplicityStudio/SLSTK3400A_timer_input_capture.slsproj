@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="SLSTK3400A_timer_input_capture" boardCompatibility="brd2012a" partCompatibility=".*efm32hg322f64.*" toolchainCompatibility="" contentRoot="../">
+  <module id="com.silabs.sdk.exx32.board">
+    <exclude pattern=".*" />
+  </module>
+  <module id="com.silabs.sdk.exx32.common.CMSIS">
+    <exclude pattern=".*" />
+  </module>
+  <module id="com.silabs.sdk.exx32.common.emlib">
+    <include pattern="emlib/em_cmu.c" />
+    <include pattern="emlib/em_emu.c" />
+    <include pattern="emlib/em_core.c" />
+    <include pattern="emlib/em_gpio.c" />
+    <include pattern="emlib/em_lcd.c" />
+    <include pattern="emlib/em_prs.c" />
+    <include pattern="emlib/em_system.c" />
+    <include pattern="emlib/em_timer.c" />
+    <include pattern="emlib/em_rtc.c" />
+    <include pattern="emlib/em_usart.c" />
+  </module>
+  <module id="com.silabs.sdk.exx32.common.bsp">
+    <exclude pattern=".*" />
+  </module>
+  <module id="com.silabs.sdk.exx32.common.drivers">
+    <include pattern="Drivers/display.c" />
+    <include pattern="Drivers/displayls013b7dh03.c" />
+    <include pattern="Drivers/displaypalemlib.c" />
+    <include pattern="Drivers/retargetio.c" />
+    <include pattern="Drivers/retargettextdisplay.c" />
+    <include pattern="Drivers/textdisplay.c" />
+    <include pattern="Drivers/udelay.c" />
+  </module>
+  <module id="com.silabs.sdk.exx32.part">
+    <include pattern="CMSIS/.*/startup_.*_.*.s" />
+    <include pattern="CMSIS/.*/system_.*.c" />
+  </module>
+  <module id="com.silabs.sdk.exx32.external.glib">
+    <exclude pattern=".*" />
+  </module>
+  <macroDefinition name="STK3400" />
+  <macroDefinition name="MEMORY_LCD" />
+  <includePath uri="../../an/an0014_efm32_timer" />
+  <includePath uri="../../kits/SLSTK3400A_EFM32HG/config" />
+  <folder name="src">
+    <file name="main_timer_input_capture.c" uri="main_timer_input_capture.c" />
+  </folder>
+</project>

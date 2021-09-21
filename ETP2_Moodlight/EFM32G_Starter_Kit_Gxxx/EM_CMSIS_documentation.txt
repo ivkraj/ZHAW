@@ -1,0 +1,5 @@
+Links to the online documentation of CMSIS and EMLIB
+http://devtools.silabs.com/dl/documentation/doxygen/
+
+As the server is often offline the 
+EM_CMSIS_3.20.7_DOC.zip file is provided here.

@@ -1,0 +1,5 @@
+The pinout of the expansion header and the breakout pads of the Gecko evaluation board
+is in the file ../EFM32G_Starter_Kit_Gxxx/HeaderPinOutline_Gecko.xlsx
+
+For the PCB layout it is important to have all the signals at appropriate pins with the desired function (PWM, ADC, DAC, ...)
+
